@@ -1,0 +1,653 @@
+fileFormatVersion: 2
+guid: ddb7c52f088415a4eb3f223611164a48
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8173091085947881332
+    second: Mairo_Test_0
+  - first:
+      213: -1683201620314990200
+    second: Mairo_Test_1
+  - first:
+      213: 7489949464448354088
+    second: Mairo_Test_2
+  - first:
+      213: -5931347338316239210
+    second: Mairo_Test_3
+  - first:
+      213: 4042404856570390865
+    second: Mairo_Test_4
+  - first:
+      213: 4998660214465783716
+    second: Mairo_Test_5
+  - first:
+      213: 5194655156075266481
+    second: Mairo_Test_6
+  - first:
+      213: 621731859857171526
+    second: Mairo_Test_7
+  - first:
+      213: -1758633810560890276
+    second: Mairo_Test_8
+  - first:
+      213: 7537223112217137897
+    second: Mairo_Test_9
+  - first:
+      213: 4159198027388182356
+    second: Mairo_Test_10
+  - first:
+      213: -8273063052776033890
+    second: Mairo_Test_11
+  - first:
+      213: 5042495619734688980
+    second: Mairo_Test_12
+  - first:
+      213: 8561876112546769448
+    second: Mairo_Test_13
+  - first:
+      213: 7888487663578212819
+    second: Mairo_Test_14
+  - first:
+      213: 4776077109577522293
+    second: Mairo_Test_15
+  - first:
+      213: 5304894149431574753
+    second: Mairo_Test_16
+  - first:
+      213: 3553371637070341960
+    second: Mairo_Test_17
+  - first:
+      213: -2775149883059865636
+    second: Mairo_Test_18
+  - first:
+      213: 3924544388907065544
+    second: Mairo_Test_19
+  - first:
+      213: -2878860373734849515
+    second: Mairo_Test_20
+  - first:
+      213: -1885642293216197727
+    second: Mairo_Test_21
+  - first:
+      213: -2236693576435653210
+    second: Mairo_Test_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mairo_Test_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c27abda77ecf34e9b28d86f78d5178
+      internalID: -8173091085947881332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441016aa70c641646bf218030ff0d0d5
+      internalID: -1683201620314990200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf683d80bc08674a87cb5dbbad6b1dd
+      internalID: 7489949464448354088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62933a2ad06ee74b850a7fc768bfb5f
+      internalID: -5931347338316239210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a38cf2bc9fd7d44eb35d14b8ee0d3e9
+      internalID: 4042404856570390865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 129
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f0bf47f706bc040867691548e389ee
+      internalID: 4998660214465783716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dc97a85cab2b441969264a1c184ea2
+      internalID: 5194655156075266481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a4c516e5b07414a87f8fed6e277a13
+      internalID: 621731859857171526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_8
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00387d3b697f26044af77a77f43b415b
+      internalID: -1758633810560890276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_9
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a443ead47ff3204b958595149ecf789
+      internalID: 7537223112217137897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bf4711dbf6a5f4b883370982c2c6f3
+      internalID: 4159198027388182356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_11
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 86
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37d6d6a88ab2914eba5eb45fefdf84a
+      internalID: -8273063052776033890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de40c33ac34a67448f90b2960bdecaf
+      internalID: 5042495619734688980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8ba33b2febdc94fa0ed4b4caa2cd93
+      internalID: 8561876112546769448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_14
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9fea7147c8e9e4ba3e6b76975643ee
+      internalID: 7888487663578212819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_15
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84caba83749b2834bb03e3f9d7d9bbab
+      internalID: 4776077109577522293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_16
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeed4ad9972799845b30d8a92365a873
+      internalID: 5304894149431574753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_17
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 43
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98e2bd49c52dc04a948f8d90f4ae2dc
+      internalID: 3553371637070341960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce8d1a9b015ed644882c9357c6ef046
+      internalID: -2775149883059865636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_19
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba289b324ce1ac646bd07f0be56fdb46
+      internalID: 3924544388907065544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_20
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b1976d10cdbf842a2a7d56a567d74b
+      internalID: -2878860373734849515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_21
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f020aced19fdd47a98eefc03e7b5d3
+      internalID: -1885642293216197727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mairo_Test_22
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 79
+        height: 43
+      alignment: 9
+      pivot: {x: 0.256, y: 0.324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94bc4de4b181f224b849b09d7caa8737
+      internalID: -2236693576435653210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0f5427d2007722c4a8e2cfad8b77e28a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

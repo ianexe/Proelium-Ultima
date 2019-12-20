@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: c4ff99eaf0ab828478a50484b065cf9e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2281072625770168811
+    second: Jeane_Sheet1_0
+  - first:
+      213: -4207153678262403528
+    second: Jeane_Sheet1_1
+  - first:
+      213: -6045798931842139268
+    second: Jeane_Sheet1_2
+  - first:
+      213: -2243936072286421287
+    second: Jeane_Sheet1_3
+  - first:
+      213: 3908320614634257922
+    second: Jeane_Sheet1_4
+  - first:
+      213: 3626308203523814674
+    second: Jeane_Sheet1_5
+  - first:
+      213: 9128339478613263430
+    second: Jeane_Sheet1_6
+  - first:
+      213: 8623681559803482200
+    second: Jeane_Sheet1_7
+  - first:
+      213: 5683861477506673979
+    second: Jeane_Sheet1_8
+  - first:
+      213: -537129023715000942
+    second: Jeane_Sheet1_9
+  - first:
+      213: -6958044419267992018
+    second: Jeane_Sheet1_10
+  - first:
+      213: -4901793829105548499
+    second: Jeane_Sheet1_11
+  - first:
+      213: -3116579410079418058
+    second: Jeane_Sheet1_12
+  - first:
+      213: -3656418128999324664
+    second: Jeane_Sheet1_13
+  - first:
+      213: -9107441180927749271
+    second: Jeane_Sheet1_14
+  - first:
+      213: 4991911639095408339
+    second: Jeane_Sheet1_15
+  - first:
+      213: -4641712208603768332
+    second: Jeane_Sheet1_16
+  - first:
+      213: 4806223829203411300
+    second: Jeane_Sheet1_17
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Jeane_Sheet1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ecf46a05c84ee46bdec5878481ae98
+      internalID: 2281072625770168811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 256
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1619873f8ee55494c8a675ee4a0ff669
+      internalID: -4207153678262403528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 256
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc8338b75653964fa5b423fd9263d6b
+      internalID: -6045798931842139268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 256
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282fde78bf03b044495ee124cb8a83e9
+      internalID: -2243936072286421287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4027fb52a907274d86d983524c57758
+      internalID: 3908320614634257922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 192
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174f945d1b31ce340851b21fad1e96c9
+      internalID: 3626308203523814674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 192
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58453123cac71a44ba7703842ae51159
+      internalID: 9128339478613263430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 192
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0728050a4e07045a5db3e9cf793b41
+      internalID: 8623681559803482200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac136324b9755e249992c5e9e842783e
+      internalID: 5683861477506673979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 128
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda141a00764e474ea4a7c2318d0c02d
+      internalID: -537129023715000942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 128
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c80ee6c17fe8547ad83106278436fc
+      internalID: -6958044419267992018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 128
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81c7a6bbb9603c4c879a69acb63e010
+      internalID: -4901793829105548499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea470e89b29d67c4e88d49200bb2fe3c
+      internalID: -3116579410079418058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 64
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005e139f37fe6a2419d689e2e5cd71e8
+      internalID: -3656418128999324664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 64
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be3133361bb04e4bba6d40415874706
+      internalID: -9107441180927749271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 64
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea909fb383d5ca4a93e78e7f0995abe
+      internalID: 4991911639095408339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_16
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c82c1860e486ce4a93596b8842af383
+      internalID: -4641712208603768332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeane_Sheet1_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 98
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58db73c9a5c6a4b49ada79db90661b45
+      internalID: 4806223829203411300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2a1a1abaa5bba474bba12ed4c7dd065f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
