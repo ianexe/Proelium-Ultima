@@ -5,7 +5,8 @@ using UnityEngine;
 public enum PanelTeam
 {
     RED,
-    BLUE
+    BLUE,
+    NULL
 }
 
 public enum PanelState

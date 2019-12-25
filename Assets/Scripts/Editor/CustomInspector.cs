@@ -1,5 +1,4 @@
-﻿/*
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 //using UnityEditor.UIElements;
 
@@ -41,5 +40,4 @@ public class CustomInspector : PropertyDrawer
         return 18f * data.arraySize+18;
     }
 }
-*/
 
