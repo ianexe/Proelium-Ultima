@@ -111,7 +111,18 @@ MonoBehaviour:
     m_ActionId: ba630efb-b136-4038-a3fc-98d418f61ebb
     m_ActionName: UI/Square[/Keyboard/x,/DualShock4GamepadHID/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 468793699888307019}
+        m_MethodName: CancelReady
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 591844aa-9762-40e7-8ebe-f2c983b85043
     m_ActionName: UI/Circle[/Keyboard/c,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:

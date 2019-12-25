@@ -9,6 +9,7 @@ public class TeamManager : MonoBehaviour
 {
     public Image controller_image;
     public Image keyboard_image;
+    private Vector3 idle_position;
 
     public Text blue_ready;
     public Text red_ready;
@@ -21,8 +22,8 @@ public class TeamManager : MonoBehaviour
 
     public static TeamManager Instance;
 
-    private UnityEngine.InputSystem.PlayerInput blue_player;
-    private UnityEngine.InputSystem.PlayerInput red_player;
+    public UnityEngine.InputSystem.PlayerInput blue_player;
+    public UnityEngine.InputSystem.PlayerInput red_player;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class TeamManager : MonoBehaviour
         active_players_ui = new List<Image>();
         blue_player = null;
         red_player = null;
+        idle_position = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -60,11 +62,12 @@ public class TeamManager : MonoBehaviour
         else if (inputs_in_scene[0].currentControlScheme == "KeyBoard")
             instance = Instantiate(keyboard_image, transform);
 
-        Vector3 base_pos = instance.rectTransform.position;
+        if (idle_position == Vector3.zero)
+            idle_position = instance.rectTransform.position;
         float y_value = instance.rectTransform.position.y;
         y_value -= (input_manager.playerCount-1) * image_offset;
 
-        instance.rectTransform.position = new Vector3(base_pos.x, y_value, base_pos.z);
+        instance.rectTransform.position = new Vector3(idle_position.x, y_value, idle_position.z);
         active_players_ui.Add(instance);
     }
 
@@ -84,14 +87,14 @@ public class TeamManager : MonoBehaviour
                 Vector3 base_pos = active_players_ui[i].rectTransform.position;
 
                 float x_value = active_players_ui[i].rectTransform.position.x;
-                if (team == PanelTeam.BLUE && !IsPlayerInTeam(player))
+                if (team == PanelTeam.BLUE && !IsPlayerInTeam(team))
                 {
                     active_players_ui[i].rectTransform.position = new Vector3(470, 450, base_pos.z);
                     blue_player = player;
                     ret = true;
                 }
                     
-                else if (team == PanelTeam.RED && !IsPlayerInTeam(player))
+                else if (team == PanelTeam.RED && !IsPlayerInTeam(team))
                 {
                     active_players_ui[i].rectTransform.position = new Vector3(1470, 450, base_pos.z);
                     red_player = player;
@@ -102,9 +105,37 @@ public class TeamManager : MonoBehaviour
         return ret;
     }
 
-    private bool IsPlayerInTeam(UnityEngine.InputSystem.PlayerInput player)
+    public void LeaveTeam(UnityEngine.InputSystem.PlayerInput player)
     {
-        return (red_player == player || blue_player == player);
+        for (int i = 0; i < active_players.Count; i++)
+        {
+            if (active_players[i] == player)
+            {
+                float y_value = idle_position.y;
+                y_value -= i * image_offset;
+
+                active_players_ui[i].rectTransform.position = new Vector3(idle_position.x, y_value, 0);
+
+                if (active_players[i] == blue_player)
+                    blue_player = null;
+
+                else if (active_players[i] == red_player)
+                    red_player = null;
+            }
+        }
+    }
+
+    private bool IsPlayerInTeam(PanelTeam team)
+    {
+        bool ret = false;
+
+        if (team == PanelTeam.BLUE)
+            ret = (blue_player != null);
+
+        if (team == PanelTeam.RED)
+            ret = (red_player != null);
+
+        return ret;
     }
 
     private bool ArePlayersReady()

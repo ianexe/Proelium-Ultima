@@ -28,6 +28,16 @@ public class UIPlayer : MonoBehaviour
 
         var value = context.ReadValue<Vector2>();
 
+        if (team == PanelTeam.NULL)
+            JoinTeam(value);
+
+        else if (team != PanelTeam.NULL && !ready)
+            LeaveTeam(value);
+
+    }
+
+    private void JoinTeam(Vector2 value)
+    {
         if (value.x <= -0.75)
         {
             Debug.Log("Join Blue");
@@ -41,7 +51,21 @@ public class UIPlayer : MonoBehaviour
             if (team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.RED))
                 team = PanelTeam.RED;
         }
+    }
 
+    private void LeaveTeam(Vector2 value)
+    {
+        if (value.x <= -0.75 && team == PanelTeam.RED)
+        {
+            team_manager.LeaveTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>());
+            team = PanelTeam.NULL;
+        }
+
+        else if (value.x >= 0.75 && team == PanelTeam.BLUE)
+        {
+            team_manager.LeaveTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>());
+            team = PanelTeam.NULL;
+        }
     }
 
     public void SetReady(InputAction.CallbackContext context)
@@ -57,6 +81,22 @@ public class UIPlayer : MonoBehaviour
 
             else if (team == PanelTeam.RED)
                 team_manager.red_ready.gameObject.SetActive(true);
+        }
+    }
+
+    public void CancelReady(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return;
+
+        if (ready)
+        {
+            ready = false;
+            if (team == PanelTeam.BLUE)
+                team_manager.blue_ready.gameObject.SetActive(false);
+
+            else if (team == PanelTeam.RED)
+                team_manager.red_ready.gameObject.SetActive(false);
         }
     }
 }
