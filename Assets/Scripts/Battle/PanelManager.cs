@@ -184,6 +184,9 @@ public class PanelManager : MonoBehaviour
 
                     GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x, y].position_id), Quaternion.identity);
                     player_list[spawned_players] = clone.GetComponent<Player>();
+                    
+                    player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.blue_device);
+
                     spawned_players++;
                 }
 
@@ -198,6 +201,9 @@ public class PanelManager : MonoBehaviour
                     GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x, y].position_id), Quaternion.identity);
                     player_list[spawned_players] = clone.GetComponent<Player>();
                     clone.GetComponent<TouchMove>().enabled = false;
+
+                    player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.red_device);
+
                     spawned_players++;
                 }
             }

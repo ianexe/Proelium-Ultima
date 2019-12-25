@@ -7,6 +7,7 @@ public class UIPlayer : MonoBehaviour
 {
     PanelTeam team = PanelTeam.NULL;
     TeamManager team_manager;
+    public bool ready = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +31,32 @@ public class UIPlayer : MonoBehaviour
         if (value.x <= -0.75)
         {
             Debug.Log("Join Blue");
-            team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.BLUE);
+            if (team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.BLUE))
+                team = PanelTeam.BLUE;
         }
 
         else if (value.x >= 0.75)
         {
             Debug.Log("Join Red");
-            team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.RED);
+            if (team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.RED))
+                team = PanelTeam.RED;
         }
 
+    }
+
+    public void SetReady(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return;
+
+        if (team != PanelTeam.NULL)
+        {
+            ready = true;
+            if (team == PanelTeam.BLUE)
+                team_manager.blue_ready.gameObject.SetActive(true);
+
+            else if (team == PanelTeam.RED)
+                team_manager.red_ready.gameObject.SetActive(true);
+        }
     }
 }
