@@ -70,18 +70,23 @@ public class TeamManager : MonoBehaviour
                 Vector3 base_pos = active_players_ui[i].rectTransform.position;
 
                 float x_value = active_players_ui[i].rectTransform.position.x;
-                if (team == PanelTeam.BLUE && blue_player == null)
+                if (team == PanelTeam.BLUE && !IsPlayerInTeam(player))
                 {
                     active_players_ui[i].rectTransform.position = new Vector3(450, 400, base_pos.z);
                     blue_player = player;
                 }
                     
-                else if (team == PanelTeam.RED && red_player == null)
+                else if (team == PanelTeam.RED && !IsPlayerInTeam(player))
                 {
                     active_players_ui[i].rectTransform.position = new Vector3(1450, 400, base_pos.z);
                     red_player = player;
                 }
             }
         }
+    }
+
+    private bool IsPlayerInTeam(UnityEngine.InputSystem.PlayerInput player)
+    {
+        return (red_player == player || blue_player == player);
     }
 }
