@@ -81,7 +81,7 @@ public class PanelManager : MonoBehaviour
         }
     }
 
-    public bool PanelExists (int x, int y)
+    public bool PanelExists(int x, int y)
     {
         bool ret = true;
 
@@ -95,7 +95,7 @@ public class PanelManager : MonoBehaviour
     {
         bool ret = false;
 
-        if (!PanelExists(x,y))
+        if (!PanelExists(x, y))
             return false;
 
         if (panel_list[x, y].IsWalkable(team))
@@ -117,9 +117,9 @@ public class PanelManager : MonoBehaviour
                     return false;
 
                 else
-                return true;
+                    return true;
             }
-                
+
         }
 
         return false;
@@ -147,7 +147,7 @@ public class PanelManager : MonoBehaviour
                     new_hp = 0;
 
                 player_list[i].current_hp = new_hp;
-            }  
+            }
         }
     }
 
@@ -184,7 +184,7 @@ public class PanelManager : MonoBehaviour
 
                     GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x, y].position_id), Quaternion.identity);
                     player_list[spawned_players] = clone.GetComponent<Player>();
-                    
+
                     player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.blue_device);
 
                     spawned_players++;
@@ -197,7 +197,7 @@ public class PanelManager : MonoBehaviour
 
                     player_instance.panel_manager = this;
                     player_instance.Spawn(PanelTeam.RED, panel_list[x, y].position_id);
-                    
+
                     GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x, y].position_id), Quaternion.identity);
                     player_list[spawned_players] = clone.GetComponent<Player>();
                     clone.GetComponent<TouchMove>().enabled = false;
@@ -252,5 +252,11 @@ public class PanelManager : MonoBehaviour
             UnityEngine.EventSystems.EventSystem e = FindObjectOfType<UnityEngine.EventSystems.EventSystem>();
             e.SetSelectedGameObject(null);
         }
+    }
+
+    public void ExitGame()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("UITest");
     }
 }
