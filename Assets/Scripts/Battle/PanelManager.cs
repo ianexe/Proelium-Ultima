@@ -26,9 +26,11 @@ public class PanelManager : MonoBehaviour
     public Text fps_text;
 
     public GameObject pause_menu;
+    public GameObject end_battle_hud;
     public Button resume_button;
 
     private bool game_paused;
+    private bool game_finished;
 
     // Use this for initialization
     void Start()
@@ -40,6 +42,7 @@ public class PanelManager : MonoBehaviour
         SpawnPlayers();
 
         game_paused = false;
+        game_finished = false;
     }
 
     // Update is called once per frame
@@ -55,6 +58,33 @@ public class PanelManager : MonoBehaviour
         left_text3.text = GetPlayerInTeam(PanelTeam.BLUE).current_mana.ToString();
         right_text3.text = GetPlayerInTeam(PanelTeam.RED).current_mana.ToString();
         fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
+    }
+
+    void LateUpdate()
+    {
+        foreach (Player player in player_list)
+        {
+            if (player.current_hp <= 0)
+            {
+                end_battle_hud.SetActive(true);
+                Text to_set = end_battle_hud.GetComponentInChildren<Text>();
+                if (player.team == PanelTeam.BLUE)
+                {
+                    to_set.text = "RED WINS";
+                    to_set.color = Color.red;
+                }
+
+
+                else if (player.team == PanelTeam.RED)
+                {
+                    to_set.text = "BLUE WINS";
+                    to_set.color = Color.blue;
+                }
+
+                game_finished = true;
+                break;
+            }
+        }
     }
 
     void SetPanelGrid()
@@ -185,7 +215,8 @@ public class PanelManager : MonoBehaviour
                     GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x, y].position_id), Quaternion.identity);
                     player_list[spawned_players] = clone.GetComponent<Player>();
 
-                    player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.blue_device);
+                    if (GlobalData.Instance.blue_device != null)
+                        player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.blue_device);
 
                     spawned_players++;
                 }
@@ -202,7 +233,8 @@ public class PanelManager : MonoBehaviour
                     player_list[spawned_players] = clone.GetComponent<Player>();
                     clone.GetComponent<TouchMove>().enabled = false;
 
-                    player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.red_device);
+                    if (GlobalData.Instance.red_device != null)
+                        player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.red_device);
 
                     spawned_players++;
                 }
@@ -221,11 +253,14 @@ public class PanelManager : MonoBehaviour
 
     public bool IsGamePaused()
     {
-        return game_paused;
+        return game_paused || game_finished;
     }
 
     public void PauseGame()
     {
+        if (game_finished)
+            return;
+
         if (Time.timeScale > 0)
         {
             Time.timeScale = 0;
