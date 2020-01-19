@@ -1466,6 +1466,8 @@ MonoBehaviour:
   pause_menu: {fileID: 890015615}
   end_battle_hud: {fileID: 455273564}
   resume_button: {fileID: 1421279674}
+  test_entity: {fileID: 4214850870008757163, guid: 98e14d19525e22e429ff01f39509d1d5,
+    type: 3}
 --- !u!4 &1475026237
 Transform:
   m_ObjectHideFlags: 0

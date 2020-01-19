@@ -29,6 +29,8 @@ public class PanelManager : MonoBehaviour
     public GameObject end_battle_hud;
     public Button resume_button;
 
+    public GameObject test_entity;
+
     private bool game_paused;
     private bool game_finished;
 
@@ -40,6 +42,8 @@ public class PanelManager : MonoBehaviour
 
         player_list = new Player[2];
         SpawnPlayers();
+
+        SpawnEntity();
 
         game_paused = false;
         game_finished = false;
@@ -194,6 +198,12 @@ public class PanelManager : MonoBehaviour
         }
 
         return ret;
+    }
+
+    void SpawnEntity()
+    {
+        GameObject clone = Instantiate(test_entity, PositionWithOffset(panel_list[0, 1].position_id), Quaternion.identity);
+        panel_list[0, 1].AddEntity(clone.GetComponent<Entity>());
     }
 
     void SpawnPlayers()

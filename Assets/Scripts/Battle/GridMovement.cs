@@ -60,8 +60,25 @@ public class GridMovement : MonoBehaviour
     {
         var currentPos = transform.position;
         var t = 0f;
+        bool layer_changed = false;
         while (t < 1)
         {
+            if (t >= 0.5f && !layer_changed)
+            {
+                float y_movement = position.y - currentPos.y;
+                int sorting_order = 0;
+                if (y_movement != 0)
+                {
+                    if (y_movement < 0)
+                        sorting_order = 1;
+                    else
+                        sorting_order = -1;
+                }
+
+                player.GetComponent<SpriteRenderer>().sortingOrder += sorting_order;
+                layer_changed = true;
+            }
+
             t += Time.deltaTime / player.FrameToTime(movement_frames);
             transform.position = Vector3.Lerp(currentPos, position, t);
             yield return null;

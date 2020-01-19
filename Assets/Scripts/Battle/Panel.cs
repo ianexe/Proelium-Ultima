@@ -26,6 +26,7 @@ public class Panel : MonoBehaviour
     public Vector2 position_id;
 
     public List<Attack> active_attacks;
+    public List<Entity> active_entities;
 
     private Color start_color;
     private Color warning_color;
@@ -105,6 +106,15 @@ public class Panel : MonoBehaviour
         if (panel_state != PanelState.BROKEN && team == panel_team)
             ret = true;
 
+        foreach (Entity entity in active_entities)
+        {
+            if (entity.solid)
+            {
+                ret = false;
+                break;
+            }
+        }
+
         return ret;
     }
 
@@ -127,6 +137,24 @@ public class Panel : MonoBehaviour
                 return;
             }
         }  
+    }
+
+    public void AddEntity(Entity entity)
+    {
+        entity.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
+        active_entities.Add(entity);
+    }
+
+    public void RemoveEntity(Entity entity)
+    {
+        foreach (Entity entity_t in active_entities)
+        {
+            if (entity_t.GetInstanceID() == entity.GetInstanceID())
+            {
+                active_entities.Remove(entity_t);
+                return;
+            }
+        }
     }
 
     private bool CheckAttack(Attack attack)
