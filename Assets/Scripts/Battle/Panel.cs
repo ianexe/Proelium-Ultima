@@ -151,6 +151,9 @@ public class Panel : MonoBehaviour
         GameObject clone = Instantiate(attack.entity, panel_manager.PositionWithOffset(position_id), Quaternion.identity);
         clone.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
         active_entities.Add(clone.GetComponent<Entity>());
+        clone.GetComponent<Entity>().SetPanel(this);
+        if (attack.entity.GetComponent<Entity>().lifetime > 0)
+            StartCoroutine(RemoveEntityByTime(clone.GetComponent<Entity>()));
     }
 
     public void RemoveEntity(Entity entity)
@@ -160,6 +163,7 @@ public class Panel : MonoBehaviour
             if (entity_t.GetInstanceID() == entity.GetInstanceID())
             {
                 active_entities.Remove(entity_t);
+                Destroy(entity_t.gameObject);
                 return;
             }
         }
@@ -184,6 +188,12 @@ public class Panel : MonoBehaviour
     {
         yield return new WaitForSeconds(FrameToTime(attack.duration_frames));
         RemoveAttack(attack);
+    }
+
+    IEnumerator RemoveEntityByTime(Entity entity)
+    {
+        yield return new WaitForSeconds(FrameToTime(entity.lifetime));
+        RemoveEntity(entity);
     }
 
     void ChangeColor(Color new_color)

@@ -136,22 +136,35 @@ public class PanelManager : MonoBehaviour
         return ret;
     }
 
-    public bool IsEnemyInPanel(Vector2 position, PanelTeam team, bool targeteable = false)
+    public bool IsEnemyInPanel(Vector2 position, PanelTeam team, bool check_untargeteable = false, bool check_entity = true)
     {
         if (!PanelExists((int)position.x, (int)position.y))
             return false;
+
+        if (check_entity && IsEntityInPanel(position, team))
+            return true;
 
         for (int i = 0; i < player_list.Length; i++)
         {
             if (player_list[i].pos_id == position && player_list[i].team != team)
             {
-                if (targeteable && player_list[i].untargeteable)
+                if (check_untargeteable && player_list[i].untargeteable)
                     return false;
 
                 else
                     return true;
             }
+        }
 
+        return false;
+    }
+
+    public bool IsEntityInPanel(Vector2 position, PanelTeam team)
+    {
+        foreach (Entity entity in panel_list[(int)position.x, (int)position.y].active_entities)
+        {
+            if (entity.solid)
+                return true;
         }
 
         return false;
@@ -188,6 +201,19 @@ public class PanelManager : MonoBehaviour
                     new_hp = 0;
 
                 player_list[i].current_hp = new_hp;
+            }
+        }
+
+        DoDamageToEntity(position, damage);
+    }
+
+    public void DoDamageToEntity(Vector2 position, int damage)
+    {
+        foreach (Entity entity in panel_list[(int)position.x, (int)position.y].active_entities)
+        {
+            if (entity.destroyable)
+            {
+                entity.hp -= damage;
             }
         }
     }
