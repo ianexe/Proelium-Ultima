@@ -139,10 +139,18 @@ public class Panel : MonoBehaviour
         }  
     }
 
-    public void AddEntity(Entity entity)
+    public void AddEntity(Attack attack)
     {
-        entity.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
-        active_entities.Add(entity);
+        if (panel_manager.IsEnemyInPanel(position_id, attack.GetTeam()))
+        {
+            panel_manager.DoDamageToEnemy(position_id, attack.damage, attack.secondary_effects, (int)attack.damage_animation);
+            return;
+        }
+            
+
+        GameObject clone = Instantiate(attack.entity, panel_manager.PositionWithOffset(position_id), Quaternion.identity);
+        clone.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
+        active_entities.Add(clone.GetComponent<Entity>());
     }
 
     public void RemoveEntity(Entity entity)

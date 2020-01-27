@@ -165,8 +165,11 @@ public class AttackSystem : MonoBehaviour
 
         //Debug Particle
         //---------------
-        GameObject instance = Instantiate(particle, player.panel_manager.panel_list[(int)target.x, (int)target.y].transform.position, Quaternion.identity).gameObject;
-        Destroy(instance, 3);
+        if (attack.attack_type == AttackType.ATTACK)
+        {
+            GameObject instance = Instantiate(particle, player.panel_manager.panel_list[(int)target.x, (int)target.y].transform.position, Quaternion.identity).gameObject;
+            Destroy(instance, 3);
+        }
         //---------------
 
         Debug.Log("Attack " + player.panel_manager.IsEnemyInPanel(target, player.team));

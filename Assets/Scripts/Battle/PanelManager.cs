@@ -43,8 +43,6 @@ public class PanelManager : MonoBehaviour
         player_list = new Player[2];
         SpawnPlayers();
 
-        SpawnEntity();
-
         game_paused = false;
         game_finished = false;
     }
@@ -161,7 +159,16 @@ public class PanelManager : MonoBehaviour
 
     public void SendAttackToPanel(Vector2 target, Attack attack)
     {
-        panel_list[(int)target.x, (int)target.y].AddAttack(attack);
+        switch(attack.attack_type)
+        {
+            case AttackType.ATTACK:
+                panel_list[(int)target.x, (int)target.y].AddAttack(attack);
+                break;
+
+            case AttackType.ENTITY:
+                panel_list[(int)target.x, (int)target.y].AddEntity(attack);
+                break;
+        }
     }
 
     public void DoDamageToEnemy(Vector2 position, int damage, List<SecondaryEffect> effects, int animation)
@@ -198,12 +205,6 @@ public class PanelManager : MonoBehaviour
         }
 
         return ret;
-    }
-
-    void SpawnEntity()
-    {
-        GameObject clone = Instantiate(test_entity, PositionWithOffset(panel_list[0, 1].position_id), Quaternion.identity);
-        panel_list[0, 1].AddEntity(clone.GetComponent<Entity>());
     }
 
     void SpawnPlayers()

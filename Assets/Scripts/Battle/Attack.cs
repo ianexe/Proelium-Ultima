@@ -10,6 +10,14 @@ public enum Range
     DIAGONAL
 }
 
+public enum AttackType
+{
+    ATTACK,
+    PROJECTILE,
+    ENTITY,
+    NULL
+}
+
 public enum DamageAnimation
 {
     NONE,
@@ -29,6 +37,8 @@ public enum SecondaryEffect
 public class Attack : ScriptableObject
 {
     public BoolArray range = new BoolArray(4, 3);
+    public AttackType attack_type;
+    public GameObject entity;
     public Range range_type;
     public float frame_delay;
     public float duration_frames;
