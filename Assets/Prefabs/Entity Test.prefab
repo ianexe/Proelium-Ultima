@@ -97,3 +97,5 @@ MonoBehaviour:
   destroyable: 1
   hp: 50
   lifetime: 0
+  blink_alpha: 0.7
+  blink_frames: 5

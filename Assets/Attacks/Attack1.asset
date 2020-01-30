@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range:
     column:
+    - row: 00000000
     - row: 00010000
-    - row: 00000100
-    - row: 00010000
+    - row: 00000000
+  attack_type: 0
+  entity: {fileID: 4214850870008757163, guid: 98e14d19525e22e429ff01f39509d1d5, type: 3}
   range_type: 1
   frame_delay: 5
   duration_frames: 5
   end_when_hit: 1
   mana: 1
-  damage: 100
+  damage: 10
   animation: 2
   damage_animation: 1
   secondary_effects: 

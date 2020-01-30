@@ -11,10 +11,17 @@ public class Entity : MonoBehaviour
     private Panel panel;
     private PanelTeam team = PanelTeam.NULL;
 
+    private SpriteRenderer sprite_renderer;
+    private float spawn_time;
+    public float blink_alpha;
+    public int blink_frames;
+    private bool blinking = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite_renderer = GetComponent<SpriteRenderer>();
+        spawn_time = Time.time;
     }
 
     // Update is called once per frame
@@ -25,6 +32,12 @@ public class Entity : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!blinking && lifetime > 0 && (Time.time-spawn_time >= (FrameToTime(lifetime)/5)*4))
+        {
+            blinking = true;
+            StartCoroutine(BlinkSprite());
+        }
+
         if (destroyable && hp <= 0)
             panel.RemoveEntity(this);
     }
@@ -44,4 +57,35 @@ public class Entity : MonoBehaviour
 
         team = to_set;
     }
+
+    private IEnumerator BlinkSprite()
+    {
+        var color = sprite_renderer.color;
+        color.a = blink_alpha;
+        sprite_renderer.color = color;
+        while (true)
+        {
+            sprite_renderer.enabled = !sprite_renderer.enabled;
+            yield return new WaitForSeconds(FrameToTime(blink_frames));
+        }
+        /*
+        color.a = 1f;
+        sprite_renderer.color = color;
+        sprite_renderer.enabled = true;
+        Debug.Log("Ending Blink at " + Time.frameCount);
+        */
+    }
+
+    float FrameToTime(float frame)
+    {
+        //Debug.Log(frame + " Frames = " + frame / 60f + " seconds");
+        return (frame / 60f);
+    }
+
+    float TimeToFrame(float time)
+    {
+        //Debug.Log(frame + " Frames = " + frame / 60f + " seconds");
+        return (time * 60f);
+    }
 }
+
