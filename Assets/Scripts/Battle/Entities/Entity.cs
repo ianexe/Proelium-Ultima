@@ -8,7 +8,7 @@ public class Entity : MonoBehaviour
     public bool destroyable;
     public int hp;
     public int lifetime;
-    private Panel panel;
+    private List<Panel> panels = new List<Panel>();
     private PanelTeam team = PanelTeam.NULL;
 
     private SpriteRenderer sprite_renderer;
@@ -22,6 +22,9 @@ public class Entity : MonoBehaviour
     {
         sprite_renderer = GetComponent<SpriteRenderer>();
         spawn_time = Time.time;
+
+        if (lifetime > 0)
+            StartCoroutine(RemoveEntityByTime());
     }
 
     // Update is called once per frame
@@ -39,15 +42,14 @@ public class Entity : MonoBehaviour
         }
 
         if (destroyable && hp <= 0)
-            panel.RemoveEntity(this);
+        {
+            RemoveEntity();
+        }   
     }
 
     public void SetPanel(Panel to_set)
     {
-        if (panel != null)
-            return;
-
-        panel = to_set;
+        panels.Add(to_set);
     }
 
     public void SetTeam(PanelTeam to_set)
@@ -74,6 +76,20 @@ public class Entity : MonoBehaviour
         sprite_renderer.enabled = true;
         Debug.Log("Ending Blink at " + Time.frameCount);
         */
+    }
+
+    private IEnumerator RemoveEntityByTime()
+    {
+        yield return new WaitForSeconds(FrameToTime(lifetime));
+        RemoveEntity();
+    }
+
+    public void RemoveEntity()
+    {
+        foreach (Panel panel in panels)
+            panel.RemoveEntity(this);
+
+        Destroy(gameObject);
     }
 
     float FrameToTime(float frame)
