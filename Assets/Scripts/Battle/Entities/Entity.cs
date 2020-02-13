@@ -24,7 +24,7 @@ public class Entity : MonoBehaviour
         spawn_time = Time.time;
 
         if (lifetime > 0)
-            StartCoroutine(RemoveEntityByTime());
+            StartCoroutine(DestroyEntityByTime());
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class Entity : MonoBehaviour
 
         if (destroyable && hp <= 0)
         {
-            RemoveEntity();
+            DestroyEntity();
         }   
     }
 
@@ -78,17 +78,21 @@ public class Entity : MonoBehaviour
         */
     }
 
-    private IEnumerator RemoveEntityByTime()
+    private IEnumerator DestroyEntityByTime()
     {
         yield return new WaitForSeconds(FrameToTime(lifetime));
-        RemoveEntity();
+        DestroyEntity();
     }
 
     public void RemoveEntity()
     {
         foreach (Panel panel in panels)
             panel.RemoveEntity(this);
+    }
 
+    public void DestroyEntity()
+    {
+        RemoveEntity();
         Destroy(gameObject);
     }
 

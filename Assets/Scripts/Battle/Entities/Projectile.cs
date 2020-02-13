@@ -8,7 +8,7 @@ public class Projectile : Entity
     private int x_size = 1;
 
     public int frames_per_tile;
-    private Attack attack;
+    public Attack attack;
     private float x_distance;
 
     // Start is called before the first frame update
@@ -62,8 +62,20 @@ public class Projectile : Entity
         return (time * 60f);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D");
+        if (col.CompareTag("Panel"))
+        {
+            Panel col_panel = col.GetComponent<Panel>();
+            col_panel.AddProjectile(this);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Panel"))
+        {
+            Panel col_panel = col.GetComponent<Panel>();
+            col_panel.RemoveProjectile(this);
+        }
     }
 }

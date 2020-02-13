@@ -43,9 +43,6 @@ public class PanelManager : MonoBehaviour
         player_list = new Player[2];
         SpawnPlayers();
 
-        GameObject clone = Instantiate(test_entity, PositionWithOffset(new Vector2(1,0)), Quaternion.identity);
-        clone.GetComponent<Projectile>().SetXDistance(x_distance);
-
         game_paused = false;
         game_finished = false;
     }
@@ -183,6 +180,10 @@ public class PanelManager : MonoBehaviour
 
             case AttackType.ENTITY:
                 panel_list[(int)target.x, (int)target.y].AddEntity(attack);
+                break;
+
+            case AttackType.PROJECTILE:
+                panel_list[(int)target.x, (int)target.y].SpawnProjectile(attack);
                 break;
         }
     }

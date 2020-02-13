@@ -27,6 +27,7 @@ public class Panel : MonoBehaviour
 
     public List<Attack> active_attacks;
     public List<Entity> active_entities;
+    public List<Projectile> active_projectiles;
 
     private Color start_color;
     private Color warning_color;
@@ -60,9 +61,9 @@ public class Panel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        List<Attack> to_iterate = new List<Attack>(active_attacks);
+        List<Attack> attacks_to_iterate = new List<Attack>(active_attacks);
 
-        foreach(Attack attack in to_iterate)
+        foreach(Attack attack in attacks_to_iterate)
         {
             if (panel_manager.IsEnemyInPanel(position_id, attack.GetTeam()))
             {
@@ -71,7 +72,21 @@ public class Panel : MonoBehaviour
             } 
         }
 
-        to_iterate.Clear();
+        attacks_to_iterate.Clear();
+
+        List<Projectile> projectiles_to_iterate = new List<Projectile>(active_projectiles);
+
+        foreach (Projectile projectile in projectiles_to_iterate)
+        {
+            if (panel_manager.IsEnemyInPanel(position_id, projectile.attack.GetTeam()))
+            {
+                panel_manager.DoDamageToEnemy(position_id, projectile.attack.damage, projectile.attack.secondary_effects, (int)projectile.attack.damage_animation);
+                RemoveProjectile(projectile);
+                Destroy(projectile.gameObject);
+            }
+        }
+
+        projectiles_to_iterate.Clear();
     }
 
     public void SetPosition(int x, int y)
@@ -161,6 +176,32 @@ public class Panel : MonoBehaviour
             if (entity_t.GetInstanceID() == entity.GetInstanceID())
             {
                 active_entities.Remove(entity_t);
+                return;
+            }
+        }
+    }
+
+    public void SpawnProjectile(Attack attack)
+    {
+        GameObject clone = Instantiate(attack.entity, panel_manager.PositionWithOffset(position_id), Quaternion.identity);
+        clone.GetComponent<Projectile>().SetXDistance(panel_manager.x_distance);
+        clone.GetComponent<Projectile>().SetAttack(attack);
+    }
+
+    public void AddProjectile(Projectile projectile)
+    {
+        active_projectiles.Add(projectile);
+        projectile.SetPanel(this);
+    }
+
+    public void RemoveProjectile(Projectile projectile)
+    {
+        foreach (Projectile projectile_t in active_projectiles)
+        {
+            if (projectile_t.GetInstanceID() == projectile.GetInstanceID())
+            {
+                projectile.RemoveEntity();
+                active_projectiles.Remove(projectile);
                 return;
             }
         }
