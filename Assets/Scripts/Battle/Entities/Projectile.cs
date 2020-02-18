@@ -77,5 +77,8 @@ public class Projectile : Entity
             Panel col_panel = col.GetComponent<Panel>();
             col_panel.RemoveProjectile(this);
         }
+
+        if (GetPanelsCount() <= 0)
+            Destroy(gameObject, 1);
     }
 }

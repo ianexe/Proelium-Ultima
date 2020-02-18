@@ -186,6 +186,7 @@ public class Panel : MonoBehaviour
         GameObject clone = Instantiate(attack.entity, panel_manager.PositionWithOffset(position_id), Quaternion.identity);
         clone.GetComponent<Projectile>().SetXDistance(panel_manager.x_distance);
         clone.GetComponent<Projectile>().SetAttack(attack);
+        clone.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
     }
 
     public void AddProjectile(Projectile projectile)
@@ -200,7 +201,7 @@ public class Panel : MonoBehaviour
         {
             if (projectile_t.GetInstanceID() == projectile.GetInstanceID())
             {
-                projectile.RemoveEntity();
+                projectile.RemovePanel(this);
                 active_projectiles.Remove(projectile);
                 return;
             }

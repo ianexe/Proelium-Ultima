@@ -96,6 +96,16 @@ public class Entity : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void RemovePanel(Panel panel)
+    {
+        panels.Remove(panel);
+    }
+
+    public int GetPanelsCount()
+    {
+        return panels.Count;
+    }
+
     float FrameToTime(float frame)
     {
         //Debug.Log(frame + " Frames = " + frame / 60f + " seconds");

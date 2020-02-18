@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel_team: 0
   panel_state: 0
-  position_id: {x: 5, y: 2}
+  position_id: {x: 7, y: 3}
   active_attacks: []
   active_entities: []
   active_projectiles: []
