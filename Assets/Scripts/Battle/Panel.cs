@@ -187,6 +187,10 @@ public class Panel : MonoBehaviour
         clone.GetComponent<Projectile>().SetXDistance(panel_manager.x_distance);
         clone.GetComponent<Projectile>().SetAttack(attack);
         clone.GetComponent<SpriteRenderer>().sortingOrder = (int)-position_id.y;
+        if (attack.GetTeam() == PanelTeam.RED)
+        {
+            clone.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public void AddProjectile(Projectile projectile)

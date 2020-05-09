@@ -11,9 +11,16 @@ public class Projectile : Entity
     public Attack attack;
     private float x_distance;
 
+    private int team_scale = 1;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (attack.GetTeam() == PanelTeam.RED)
+        {
+            team_scale = -1;
+        }
+            
         StartCoroutine(Move());
     }
 
@@ -26,7 +33,7 @@ public class Projectile : Entity
     {
         var currentPos = transform.position;
         var finalPos = currentPos;
-        finalPos.x += x_distance;
+        finalPos.x += x_distance*team_scale;
         var t = 0f;
 
         while (t < 1)
