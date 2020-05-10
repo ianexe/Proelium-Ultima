@@ -567,11 +567,11 @@ MonoBehaviour:
   m_AssetsPPU: 100
   m_RefResolutionX: 480
   m_RefResolutionY: 270
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 1
-  m_CropFrameY: 1
-  m_StretchFill: 1
+  m_UpscaleRT: 1
+  m_PixelSnapping: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &557658002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1583,7 @@ MonoBehaviour:
     type: 3}
   player_prefab: {fileID: 8946399642506757284, guid: a46acfbcefef7eb4ea5d971709dbe4f6,
     type: 3}
-  x_size: 3
+  x_size: 4
   y_size: 3
   x_distance: 0.5
   y_distance: 0.3

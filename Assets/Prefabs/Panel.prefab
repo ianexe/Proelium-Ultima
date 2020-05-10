@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel_team: 0
   panel_state: 0
-  position_id: {x: 5, y: 2}
+  position_id: {x: 7, y: 2}
   active_attacks: []
   active_entities: []
   active_projectiles: []
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4883721, y: 0.5}
     oldSize: {x: 0.43, y: 0.22}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
