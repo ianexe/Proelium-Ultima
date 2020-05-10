@@ -29,7 +29,8 @@ public class PanelManager : MonoBehaviour
     public GameObject end_battle_hud;
     public Button resume_button;
 
-    public GameObject test_entity;
+    public float camera_offset_Y;
+    public GameObject test_background;
 
     private bool game_paused;
     private bool game_finished;
@@ -42,6 +43,16 @@ public class PanelManager : MonoBehaviour
 
         player_list = new Player[2];
         SpawnPlayers();
+
+        //Camera Center
+        Vector3 cam_pos = Camera.main.transform.position;
+        cam_pos.x = panel_list[x_size, (int)(y_size / 2)].transform.position.x;
+        cam_pos.x -= x_distance / 2;
+        cam_pos.y = panel_list[x_size, (int)(y_size / 2)].transform.position.y;
+        cam_pos.y += camera_offset_Y;
+
+        Camera.main.transform.position = cam_pos;
+
 
         game_paused = false;
         game_finished = false;
