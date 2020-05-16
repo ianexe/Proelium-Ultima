@@ -102,8 +102,11 @@ MonoBehaviour:
   state: 0
   team: 0
   pos_id: {x: 4, y: 0}
+  real_pos_id: {x: 4, y: 0}
   panel_manager: {fileID: 0}
   buffer_frames: 5
+  grid_movement: {fileID: 0}
+  attack_system: {fileID: 0}
   sprite_renderer: {fileID: 0}
   animator: {fileID: 0}
   max_hp: 200

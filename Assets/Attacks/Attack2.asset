@@ -29,3 +29,8 @@ MonoBehaviour:
   damage_animation: 1
   secondary_effects: 
   image: {fileID: 0}
+  move: 1
+  move_teleport: 1
+  frames_to_move: 0
+  fixed_move_time: 0
+  move_type: 0
