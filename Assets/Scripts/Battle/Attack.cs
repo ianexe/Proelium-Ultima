@@ -33,10 +33,17 @@ public enum SecondaryEffect
     BURN
 }
 
+public enum AttackMoveType
+{
+    FIRST_ENTITY,
+    ENEMY,
+    NULL
+}
+
 [CreateAssetMenu]
 public class Attack : ScriptableObject
 {
-    public BoolArray range = new BoolArray(4, 3);
+    public BoolArray range = new BoolArray(5, 3);
     public AttackType attack_type;
     public GameObject entity;
     public Range range_type;
@@ -49,6 +56,12 @@ public class Attack : ScriptableObject
     public DamageAnimation damage_animation;
     public List<SecondaryEffect> secondary_effects;
     public Sprite image;
+
+    public bool move;
+    public bool move_teleport;
+    public float frames_to_move;
+    public bool fixed_move_time;
+    public AttackMoveType move_type;
 
     private PanelTeam team;
 

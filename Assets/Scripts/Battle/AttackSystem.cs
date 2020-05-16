@@ -44,12 +44,127 @@ public class AttackSystem : MonoBehaviour
         }
 
         player.current_mana -= current_attack.mana;
+
+        if (current_attack.move)
+        {
+            if (current_attack.move_teleport)
+                TeleportAttack();
+
+            else
+                MoveAttack();
+        }
+            
+
+        else
+            player.animator.SetInteger("Attack", current_attack.animation);
+    }
+
+    public void TeleportAttack()
+    {
+        Vector2 panel_to_move;
+        int iteration_multiplier = 1;
+
+        if (player.team == PanelTeam.BLUE)
+            panel_to_move = player.panel_manager.GetPlayerInTeam(PanelTeam.RED).real_pos_id;
+
+        else
+        {
+            panel_to_move = player.panel_manager.GetPlayerInTeam(PanelTeam.BLUE).real_pos_id;
+            iteration_multiplier = -1;
+        }
+
+        bool not_walkable = true;
+        while (not_walkable)
+        {
+            panel_to_move.x -= iteration_multiplier;
+            if (player.panel_manager.IsPanelWalkable((int)panel_to_move.x, (int)panel_to_move.y, PanelTeam.NULL))
+            {
+                not_walkable = false;
+            }
+        }
+
+        player.grid_movement.Teleport(panel_to_move, false);
         player.animator.SetInteger("Attack", current_attack.animation);
+    }
+
+    public void MoveAttack()
+    {
+        Vector2 panel_to_move = player.pos_id;
+
+        int iteration_multiplier = 1;
+        int last_panel = player.panel_manager.x_size * 2;
+        if (player.team == PanelTeam.RED)
+        {
+            iteration_multiplier = -1;
+            last_panel = -1;
+
+            for (int i = (int)player.pos_id.x; i >= last_panel; i += iteration_multiplier)
+            {
+                Vector2 pos_to_check = new Vector2(i, player.pos_id.y);
+                panel_to_move = pos_to_check;
+
+                if (CheckMoveAttackPos(pos_to_check))
+                    break;
+            }
+        }
+
+        if (player.team == PanelTeam.BLUE)
+        {
+            for (int i = (int)player.pos_id.x; i <= last_panel; i += iteration_multiplier)
+            {
+                Vector2 pos_to_check = new Vector2(i, player.pos_id.y);
+                panel_to_move = pos_to_check;
+
+                if (CheckMoveAttackPos(pos_to_check))
+                    break;
+            }
+        }
+
+        bool not_walkable = true;
+        while (not_walkable)
+        {
+            panel_to_move.x -= iteration_multiplier;
+            if (player.panel_manager.IsPanelWalkable((int)panel_to_move.x, (int)panel_to_move.y, PanelTeam.NULL))
+            {
+                not_walkable = false;
+            }
+        }
+
+        float frames_to_send = current_attack.frames_to_move;
+        if (!current_attack.fixed_move_time)
+        {
+            if (player.team == PanelTeam.BLUE)
+                frames_to_send *= panel_to_move.x - player.pos_id.x;
+
+            if (player.team == PanelTeam.RED)
+                frames_to_send *= player.pos_id.x - panel_to_move.x;
+        }
+
+        player.grid_movement.MoveAttack(panel_to_move, frames_to_send);
+    }
+
+    private bool CheckMoveAttackPos(Vector2 pos_to_check)
+    {
+        bool ret = false;
+
+        switch (current_attack.move_type)
+        {
+            case AttackMoveType.ENEMY:
+                if (player.panel_manager.IsEnemyInPanel(pos_to_check, player.team, false, false))
+                    ret = true;
+                break;
+            case AttackMoveType.FIRST_ENTITY:
+                if (player.panel_manager.IsEnemyInPanel(pos_to_check, player.team))
+                    ret = true;
+                break;
+        }
+
+        return ret;
     }
 
     public void DoAttack()
     {
-        Vector2 target = player.pos_id;
+        Vector2 target = player.real_pos_id;
 
         for (int i = 0; i < current_attack.range.column.Length; i++)
         {
@@ -87,7 +202,7 @@ public class AttackSystem : MonoBehaviour
                     }
 
                 }
-                target = player.pos_id;
+                target = player.real_pos_id;
             }
         }
     }
@@ -108,8 +223,8 @@ public class AttackSystem : MonoBehaviour
             if (end_attack)
                 yield break;
 
-            float timeStart = Time.time;
-            int frameStart = Time.frameCount;
+            //float timeStart = Time.time;
+            //int frameStart = Time.frameCount;
 
             if (send_attack.frame_delay > 0)
                 yield return new WaitForSeconds(player.FrameToTime(send_attack.frame_delay));

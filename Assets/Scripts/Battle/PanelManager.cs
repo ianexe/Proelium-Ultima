@@ -157,7 +157,7 @@ public class PanelManager : MonoBehaviour
 
         for (int i = 0; i < player_list.Length; i++)
         {
-            if (player_list[i].pos_id == position && player_list[i].team != team)
+            if (player_list[i].real_pos_id == position && player_list[i].team != team)
             {
                 if (check_untargeteable && player_list[i].untargeteable)
                     return false;
@@ -203,7 +203,7 @@ public class PanelManager : MonoBehaviour
     {
         for (int i = 0; i < player_list.Length; i++)
         {
-            if (player_list[i].pos_id == position && !player_list[i].untargeteable)
+            if (player_list[i].real_pos_id == position && !player_list[i].untargeteable)
             {
                 foreach (SecondaryEffect effect in effects)
                     player_list[i].DoSecondaryEffect(effect);
@@ -233,7 +233,7 @@ public class PanelManager : MonoBehaviour
         }
     }
 
-    Player GetPlayerInTeam(PanelTeam team)
+    public Player GetPlayerInTeam(PanelTeam team)
     {
         Player ret = null;
 

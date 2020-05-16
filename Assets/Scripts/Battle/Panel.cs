@@ -118,7 +118,11 @@ public class Panel : MonoBehaviour
     {
         bool ret = false;
 
-        if (panel_state != PanelState.BROKEN && team == panel_team)
+        PanelTeam team_to_check = team;
+        if (team_to_check == PanelTeam.NULL)
+            team_to_check = panel_team;
+
+        if (panel_state != PanelState.BROKEN && team_to_check == panel_team)
             ret = true;
 
         foreach (Entity entity in active_entities)

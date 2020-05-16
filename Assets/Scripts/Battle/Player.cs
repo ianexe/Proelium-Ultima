@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     public PanelTeam team;
     public Vector2 pos_id;
+    public Vector2 real_pos_id; //Used in case it invades an enemy field
 
     public PanelManager panel_manager;
 
@@ -38,8 +39,8 @@ public class Player : MonoBehaviour
 
     public float buffer_frames;
 
-    private GridMovement grid_movement;
-    private AttackSystem attack_system;
+    public GridMovement grid_movement;
+    public AttackSystem attack_system;
     private InputManager input_manager;
     public SpriteRenderer sprite_renderer;
     public Animator animator;
@@ -152,6 +153,9 @@ public class Player : MonoBehaviour
             case PlayerState.ATTACKING:
                 if (received == PlayerInput.STOP_MOVE)
                 {
+                    if (real_pos_id != pos_id)
+                        grid_movement.Teleport(pos_id);
+
                     SetIdle();
                 }
                 //Store Next Move in Buffer
@@ -253,9 +257,7 @@ public class Player : MonoBehaviour
         if (animation > 0 && state != PlayerState.DAMAGED)
         {
             CancelAttack();
-
             state = PlayerState.DAMAGED;
-
             animator.SetTrigger("Damage");
             //StartCoroutine(Recover());
             //StartCoroutine(BlinkSprite());
@@ -291,6 +293,8 @@ public class Player : MonoBehaviour
     {
         next_attack = 0;
         animator.SetInteger("Attack", 0);
+        if (real_pos_id != pos_id)
+            grid_movement.Teleport(pos_id);
     }
     //------------------------------------------------------------------------------------
 
@@ -407,6 +411,7 @@ public class Player : MonoBehaviour
     {
         team = start_team;
         pos_id = start_pos;
+        real_pos_id = pos_id;
         transform.position = panel_manager.PositionWithOffset(start_pos);
     }
 
