@@ -100,6 +100,12 @@ public class GridMovement : MonoBehaviour
 
         if (player.panel_manager.IsPanelWalkable((int)dest.x, (int)dest.y, team_to_check))
         {
+            if (dest.y != player.real_pos_id.y)
+            {
+                float y_movement = dest.y - player.real_pos_id.y;
+                player.GetComponent<SpriteRenderer>().sortingOrder -= (int)y_movement;
+            }
+
             if (check_team)
             {
                 player.pos_id = dest;
