@@ -27,5 +27,13 @@ MonoBehaviour:
   damage: 0
   animation: 2
   damage_animation: 1
+  sfx_fail_global: 1
+  sfx_hit_global: 0
+  sfx_fail_jeane: -1
+  sfx_hit_jeane: -1
   secondary_effects: 
-  image: {fileID: 0}
+  move: 0
+  move_teleport: 0
+  frames_to_move: 0
+  fixed_move_time: 0
+  move_type: 0

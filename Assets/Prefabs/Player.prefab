@@ -110,6 +110,7 @@ MonoBehaviour:
   attack_system: {fileID: 0}
   sprite_renderer: {fileID: 0}
   animator: {fileID: 0}
+  sfx_controller: {fileID: 0}
   max_hp: 200
   current_hp: 0
   max_stamina: 5
