@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : Entity
 {
     public int y_size;
-    private int x_size = 1;
+    //private int x_size = 1;
 
     public int frames_per_tile;
     public Attack attack;

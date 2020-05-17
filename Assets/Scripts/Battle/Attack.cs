@@ -54,8 +54,16 @@ public class Attack : ScriptableObject
     public int damage;
     public int animation;
     public DamageAnimation damage_animation;
+
+    //Sound FX
+    public int sfx_fail_global;
+    public int sfx_hit_global;
+    public int sfx_fail_jeane = -1;
+    public int sfx_hit_jeane = -1;
+
+
     public List<SecondaryEffect> secondary_effects;
-    public Sprite image;
+    //public Sprite image;
 
     public bool move;
     public bool move_teleport;

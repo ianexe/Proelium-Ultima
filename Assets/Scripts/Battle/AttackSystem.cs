@@ -166,6 +166,9 @@ public class AttackSystem : MonoBehaviour
     {
         Vector2 target = player.real_pos_id;
 
+        //Sound FX
+        bool enemy_hit = false;
+
         for (int i = 0; i < current_attack.range.column.Length; i++)
         {
             for (int j = 0; j < current_attack.range.column[i].row.Length; j++)
@@ -182,6 +185,10 @@ public class AttackSystem : MonoBehaviour
                     //If Panel Exists Do Attack
                     if (!exists)
                     {
+                        //Sound FX
+                        if (!enemy_hit && player.panel_manager.IsEnemyInPanel(target, player.team, true))
+                            enemy_hit = true;
+
                         if (current_attack.range_type == Range.SINGLE)
                             SendAttack(current_attack, target);
 
@@ -205,6 +212,15 @@ public class AttackSystem : MonoBehaviour
                 target = player.real_pos_id;
             }
         }
+
+        //Sound FX
+        //---------------
+        if (enemy_hit)
+            player.sfx_controller.Play(current_attack.sfx_hit_global);
+
+        else
+            player.sfx_controller.Play(current_attack.sfx_fail_global);
+        //---------------
     }
 
     IEnumerator RowAttack(Vector2 target, int scale)
@@ -288,10 +304,6 @@ public class AttackSystem : MonoBehaviour
         //---------------
 
         Debug.Log("Attack " + player.panel_manager.IsEnemyInPanel(target, player.team));
-        /*
-        if (player.panel_manager.IsEnemyInPanel(target, player.team))
-            player.panel_manager.DoDamageToEnemy(target, attack.damage, attack.secondary_effect, (int)attack.damage_animation);
-            */
 
         Attack to_send = Instantiate(attack);
         to_send.SetTeam(player.team);

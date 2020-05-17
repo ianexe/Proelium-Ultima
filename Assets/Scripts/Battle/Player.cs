@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     private InputManager input_manager;
     public SpriteRenderer sprite_renderer;
     public Animator animator;
+    public SoundFXController sfx_controller;
 
     public int max_hp;
     public int current_hp;
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         input_manager = GetComponent<InputManager>();
         sprite_renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        sfx_controller = GetComponent<SoundFXController>();
 
         state = PlayerState.IDLE;
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -4971601899866394421}
   - component: {fileID: 4898082333990157709}
   - component: {fileID: 8445605593906370258}
+  - component: {fileID: 9091447503755913422}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -384,3 +385,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   test: {fileID: 0}
   min_swipe: 10
+--- !u!114 &9091447503755913422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8946399642506757284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48dadfadb9e30b4588640d227c2337c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx_list:
+  - {fileID: -4737967876324554544, guid: 2cd1d6b4e9f57ad4a9905f998891f132, type: 3}
+  - {fileID: -4737967876324554544, guid: b57e3ba9abbc75747a05d9cb2a863fb2, type: 3}
+  - {fileID: -4737967876324554544, guid: 1b562e5c913fef54c838acfbd430733c, type: 3}
+  - {fileID: -4737967876324554544, guid: b160ae8d51bc01f4fb4e5f6276c1befb, type: 3}
