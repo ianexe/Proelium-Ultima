@@ -25,15 +25,15 @@ MonoBehaviour:
   end_when_hit: 0
   mana: 0
   damage: 1
-  animation: 1
-  damage_animation: 1
-  sfx_fail_global: 3
-  sfx_hit_global: 3
+  animation: 2
+  damage_animation: 0
+  sfx_fail_global: 0
+  sfx_hit_global: 0
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
   secondary_effects: 
   move: 1
-  move_teleport: 0
+  move_teleport: 1
   frames_to_move: 5
   fixed_move_time: 0
   move_type: 0

@@ -258,12 +258,21 @@ public class Player : MonoBehaviour
     {
         if (animation > 0 && state != PlayerState.DAMAGED)
         {
+            //Sound FX
+            sfx_controller.PlayHighDamage();
+
             CancelAttack();
             state = PlayerState.DAMAGED;
             animator.SetTrigger("Damage");
             //StartCoroutine(Recover());
             //StartCoroutine(BlinkSprite());
         }
+
+        else
+        {
+            sfx_controller.PlayLightDamage();
+        }
+
     }
 
     private IEnumerator Recover()

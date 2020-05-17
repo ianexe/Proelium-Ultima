@@ -27,7 +27,7 @@ MonoBehaviour:
   damage: 0
   animation: 2
   damage_animation: 1
-  sfx_fail_global: 1
+  sfx_fail_global: 0
   sfx_hit_global: 0
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
