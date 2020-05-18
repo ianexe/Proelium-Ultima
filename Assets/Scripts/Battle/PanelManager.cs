@@ -17,6 +17,10 @@ public class PanelManager : MonoBehaviour
     public Panel[,] panel_list;
     public Player[] player_list;
 
+    public Slider left_lifebar_hp;
+    public Slider left_lifebar_damage;
+    public Slider right_lifebar_hp;
+    public Slider right_lifebar_damage;
     public Text left_text;
     public Text right_text;
     public Text left_text2;
@@ -53,6 +57,14 @@ public class PanelManager : MonoBehaviour
 
         Camera.main.transform.position = cam_pos;
 
+        left_lifebar_damage.maxValue = GetPlayerInTeam(PanelTeam.BLUE).max_hp;
+        left_lifebar_damage.value = GetPlayerInTeam(PanelTeam.BLUE).max_hp;
+        left_lifebar_hp.maxValue = GetPlayerInTeam(PanelTeam.BLUE).max_hp;
+        left_lifebar_hp.value = GetPlayerInTeam(PanelTeam.BLUE).max_hp;
+        right_lifebar_damage.maxValue = GetPlayerInTeam(PanelTeam.RED).max_hp;
+        right_lifebar_damage.value = GetPlayerInTeam(PanelTeam.RED).max_hp;
+        right_lifebar_hp.maxValue = GetPlayerInTeam(PanelTeam.RED).max_hp;
+        right_lifebar_hp.value = GetPlayerInTeam(PanelTeam.RED).max_hp;
 
         game_paused = false;
         game_finished = false;
@@ -63,6 +75,32 @@ public class PanelManager : MonoBehaviour
     {
         if (game_paused)
             return;
+
+        left_lifebar_hp.value = GetPlayerInTeam(PanelTeam.BLUE).current_hp;
+        if (left_lifebar_hp.value < left_lifebar_damage.value)
+        {
+            float to_set = left_lifebar_damage.value;
+
+            to_set -= Time.deltaTime * 30f;
+
+            if (to_set < left_lifebar_hp.value)
+                to_set = left_lifebar_hp.value;
+
+            left_lifebar_damage.value = to_set;
+        }
+
+        right_lifebar_hp.value = GetPlayerInTeam(PanelTeam.RED).current_hp;
+        if (right_lifebar_hp.value < right_lifebar_damage.value)
+        {
+            float to_set = right_lifebar_damage.value;
+
+            to_set -= Time.deltaTime * 30f;
+
+            if (to_set < right_lifebar_hp.value)
+                to_set = right_lifebar_hp.value;
+
+            right_lifebar_damage.value = to_set;
+        }
 
         left_text.text = "HP: " + GetPlayerInTeam(PanelTeam.BLUE).current_hp.ToString();
         right_text.text = "HP: " + GetPlayerInTeam(PanelTeam.RED).current_hp.ToString();
