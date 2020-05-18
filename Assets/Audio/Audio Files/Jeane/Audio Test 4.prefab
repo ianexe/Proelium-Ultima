@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3346469550209951944}
   - component: {fileID: -4737967876324554544}
   m_Layer: 0
-  m_Name: High Damage
+  m_Name: Audio Test 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 18043fec22dbe3d4db2c41bf9b7cf490, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ec91ba082cdc91240bed6f3a3e76182f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

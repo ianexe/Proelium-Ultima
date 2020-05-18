@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range:
     column:
-    - row: 00000100
+    - row: 00000000
     - row: 00010000
-    - row: 00000100
+    - row: 00000000
   attack_type: 1
   entity: {fileID: 7138868494354219412, guid: fb6bc12b6596a584595c2b177e118c28, type: 3}
-  range_type: 2
+  range_type: 0
   frame_delay: 9
   duration_frames: 11
   end_when_hit: 1
   mana: 0
-  damage: 0
+  damage: 50
   animation: 2
   damage_animation: 1
-  sfx_fail_global: 0
+  sfx_fail_global: 1
   sfx_hit_global: 0
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1

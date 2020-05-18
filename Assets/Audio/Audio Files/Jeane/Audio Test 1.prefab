@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3346469550209951944}
   - component: {fileID: -4737967876324554544}
   m_Layer: 0
-  m_Name: Audio Test 2
+  m_Name: Audio Test 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,10 +41,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b1cd71f8839bc094cb2b072013695d4b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.28
-  m_Pitch: 1.11
+  m_audioClip: {fileID: 8300000, guid: 8a7f6372fed8e774286d6bfbddf8f33e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
