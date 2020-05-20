@@ -400,6 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfx_list:
   - {fileID: -4737967876324554544, guid: 2cd1d6b4e9f57ad4a9905f998891f132, type: 3}
+  - {fileID: -4737967876324554544, guid: b57e3ba9abbc75747a05d9cb2a863fb2, type: 3}
+  - {fileID: -4737967876324554544, guid: 1b562e5c913fef54c838acfbd430733c, type: 3}
+  - {fileID: -4737967876324554544, guid: b160ae8d51bc01f4fb4e5f6276c1befb, type: 3}
   light_damage_sfx: {fileID: -4737967876324554544, guid: e6a7a310404e44f42ab0c8ab95d8cff8,
     type: 3}
   high_damage_sfx: {fileID: -4737967876324554544, guid: a46bb0d0bfea6304f86b3acf793c1af2,

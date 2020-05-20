@@ -24,7 +24,7 @@ MonoBehaviour:
   duration_frames: 30
   end_when_hit: 0
   mana: 0
-  damage: 1
+  damage: 100
   animation: 1
   damage_animation: 1
   sfx_fail_global: 0
