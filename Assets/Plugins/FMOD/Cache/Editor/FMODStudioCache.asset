@@ -15,18 +15,54 @@ MonoBehaviour:
   Path: event:/Fun C
   guid: 164403e5d62ea9449b8087151d1e3d2b
   Banks:
-  - {fileID: 1626241427338082041}
+  - {fileID: 3105203500692466399}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3177983543972372011}
-  - {fileID: -3595871800438143461}
-  - {fileID: -5493744507791720765}
-  - {fileID: 4934517277022064543}
+  - {fileID: -2843813142119107350}
+  - {fileID: 7019979740130460707}
+  - {fileID: -3311172334347328530}
+  - {fileID: 926075348253300944}
   MinDistance: 0
   MaxDistance: 0
   Length: 259500
+--- !u!114 &-6954755156850989914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../Documentos/LaMerce/Proelium Ultima/Fmod/Template/TemplateBattle/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637268883494601608
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-5579752147939003110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FunC.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../Documentos/LaMerce/Proelium Ultima/Fmod/Template/TemplateBattle/Build/Desktop/FunC.bank
+  SubDir: 
+  lastModified: 637268883495091457
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-5493744507791720765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,7 +79,24 @@ MonoBehaviour:
   Min: 1
   Max: 100
   Default: 100
-  Exists: 1
+  Exists: 0
+--- !u!114 &-4554621752347979862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 2
+  m_EditorClassIdentifier: 
+  Name: Round 2
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-3595871800438143461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +113,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &-3311172334347328530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/HP
+  m_EditorClassIdentifier: 
+  Name: HP
+  Min: 1
+  Max: 100
+  Default: 100
   Exists: 1
 --- !u!114 &-3177983543972372011
 MonoBehaviour:
@@ -76,6 +146,23 @@ MonoBehaviour:
   Name: Death
   Min: 0
   Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-2843813142119107350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Death
+  m_EditorClassIdentifier: 
+  Name: Death
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &-2120613288718896802
@@ -95,7 +182,7 @@ MonoBehaviour:
   lastModified: 637268875450150949
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,17 +197,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1991486382630707255}
-  - {fileID: 1626241427338082041}
-  - {fileID: -2120613288718896802}
+  - {fileID: 3105203500692466399}
+  - {fileID: 1471057732789215655}
   EditorEvents:
   - {fileID: -9193963057080294279}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2120613288718896802}
+  - {fileID: 1471057732789215655}
   StringsBanks:
   - {fileID: 1991486382630707255}
-  stringsBankWriteTime: 637268875450181067
+  stringsBankWriteTime: 637268887625732132
   cacheVersion: 3
+--- !u!114 &143385623224361046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/HP
+  m_EditorClassIdentifier: 
+  Name: HP
+  Min: 1
+  Max: 100
+  Default: 100
+  Exists: 0
+--- !u!114 &926075348253300944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Final Round
+  m_EditorClassIdentifier: 
+  Name: Final Round
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &1471057732789215655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../Documentos/LaMerce/Proelium Ultima/Fmod/Template/TemplateBattle/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637268887625692142
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1626241427338082041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +277,7 @@ MonoBehaviour:
   lastModified: 637268875488973081
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1991486382630707255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,12 +292,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../../../../Documentos/LaMerce/Proelium Ultima/Fmod/Template/TemplateBattle/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637268875450181067
+  lastModified: 637268887625732132
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 960
   Exists: 1
+--- !u!114 &3105203500692466399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FunC.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../../Documentos/LaMerce/Proelium Ultima/Fmod/Template/TemplateBattle/Build/Desktop/FunC.bank
+  SubDir: 
+  lastModified: 637268887626281826
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3900440433810850162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Final Round
+  m_EditorClassIdentifier: 
+  Name: Final Round
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &4934517277022064543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +348,40 @@ MonoBehaviour:
   Name: Final Round
   Min: 0
   Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &5010587624590811803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Death
+  m_EditorClassIdentifier: 
+  Name: Death
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &7019979740130460707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 2
+  m_EditorClassIdentifier: 
+  Name: Round 2
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &9117465467378025679
