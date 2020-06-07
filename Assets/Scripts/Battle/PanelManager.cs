@@ -24,7 +24,8 @@ public class PanelManager : MonoBehaviour
     public Text left_text3;
     public Text right_text3;
     public Text start_text;
-    //public Text fps_text;
+    public Text fps_text;
+    public Text round_text;
 
     public GameObject pause_menu;
     public GameObject end_battle_hud;
@@ -38,6 +39,10 @@ public class PanelManager : MonoBehaviour
 
     private bool game_paused;
     private bool game_finished;
+    private int current_round;
+    public int max_rounds;
+    private int red_wins;
+    private int blue_wins;
 
     private FMODUnity.StudioEventEmitter fmod_handler;
 
@@ -63,6 +68,11 @@ public class PanelManager : MonoBehaviour
 
         game_paused = true;
         game_finished = true;
+        current_round = 0;
+        red_wins = 0;
+        blue_wins = 0;
+        if (max_rounds % 2 == 0)
+            max_rounds++;
 
         StartCoroutine(StartBattle());
     }
@@ -79,31 +89,17 @@ public class PanelManager : MonoBehaviour
         right_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.RED).current_stamina.ToString();
         left_text3.text = GetPlayerInTeam(PanelTeam.BLUE).current_mana.ToString();
         right_text3.text = GetPlayerInTeam(PanelTeam.RED).current_mana.ToString();
-        //fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
+        fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
+        round_text.text = "Round " + (current_round + 1).ToString();
     }
 
     void LateUpdate()
     {
         foreach (Player player in player_list)
         {
-            if (player.current_hp <= 0)
+            if (player.current_hp <= 0 && !game_finished)
             {
-                end_battle_hud.SetActive(true);
-                Text to_set = end_battle_hud.GetComponentInChildren<Text>();
-                if (player.team == PanelTeam.BLUE)
-                {
-                    to_set.text = "RED WINS";
-                    to_set.color = Color.red;
-                }
-
-
-                else if (player.team == PanelTeam.RED)
-                {
-                    to_set.text = "BLUE WINS";
-                    to_set.color = Color.blue;
-                }
-
-                game_finished = true;
+                EndRound();
                 break;
             }
         }
@@ -358,14 +354,6 @@ public class PanelManager : MonoBehaviour
 
     private IEnumerator StartBattle()
     {
-        //var t = 0f;
-        /*
-        while (t < 1)
-        {
-            t += Time.deltaTime / Player.FrameToTime(time_until_countdown);
-            yield return null;
-        }
-        */
         yield return new WaitForSeconds(time_until_countdown);
         start_text.gameObject.SetActive(true);
         for (int i = 3; i > 0; i--)
@@ -381,4 +369,65 @@ public class PanelManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         fmod_handler.SetParameter("Round 1 Voice", 0);
     }
+
+    private void EndRound()
+    {
+        foreach (Player player in player_list)
+        {
+            if (player.current_hp <= 0 && !game_finished)
+            {
+                if (player.team == PanelTeam.BLUE)
+                {
+                    red_wins++;
+                }
+
+
+                else if (player.team == PanelTeam.RED)
+                {
+                    blue_wins++;
+                }
+                break;
+            }
+        }
+        if (current_round >= max_rounds || red_wins > max_rounds / 2 || blue_wins > max_rounds / 2)
+            EndGame();
+
+        else
+        {
+            foreach (Player player in player_list)
+            {
+                player.current_hp = player.max_hp;
+                player.current_stamina = player.max_stamina;
+                player.current_mana = player.max_mana;
+            }
+            current_round++;
+        }
+            
+    }
+
+    private void EndGame()
+    {
+        game_finished = true;
+
+        end_battle_hud.SetActive(true);
+        Text to_set = end_battle_hud.GetComponentInChildren<Text>();
+        if (red_wins > blue_wins)
+        {
+            to_set.text = "RED WINS";
+            to_set.color = Color.red;
+        }
+
+        else if (red_wins < blue_wins)
+        {
+            to_set.text = "BLUE WINS";
+            to_set.color = Color.blue;
+        }
+
+        else
+        {
+            to_set.text = "DRAW";
+            to_set.color = Color.black;
+        }
+    }
+
 }
