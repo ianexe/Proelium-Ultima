@@ -426,13 +426,13 @@ public class Player : MonoBehaviour
         transform.position = panel_manager.PositionWithOffset(start_pos);
     }
 
-    public float FrameToTime(float frame)
+    public static float FrameToTime(float frame)
     {
         //Debug.Log(frame + " Frames = " + frame / 60f + " seconds");
         return (frame / 60f);
     }
 
-    public float TimeToFrame(float time)
+    public static float TimeToFrame(float time)
     {
         //Debug.Log(frame + " Frames = " + frame / 60f + " seconds");
         return (time*60f);

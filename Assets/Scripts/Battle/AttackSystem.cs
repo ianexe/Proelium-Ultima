@@ -243,7 +243,7 @@ public class AttackSystem : MonoBehaviour
             //int frameStart = Time.frameCount;
 
             if (send_attack.frame_delay > 0)
-                yield return new WaitForSeconds(player.FrameToTime(send_attack.frame_delay));
+                yield return new WaitForSeconds(Player.FrameToTime(send_attack.frame_delay));
             //Debug.Log(string.Format("Row Attack Time = {0}", Time.time - timeStart));
             //Debug.Log(string.Format("Row Attack Frame = {0}", Time.frameCount - frameStart));
             //Debug.Log(string.Format("Row Attack FrameRate = {0}", 1f / Time.deltaTime));
@@ -267,7 +267,7 @@ public class AttackSystem : MonoBehaviour
             yield break;
 
         if (send_attack.frame_delay > 0)
-            yield return new WaitForSeconds(player.FrameToTime(send_attack.frame_delay));
+            yield return new WaitForSeconds(Player.FrameToTime(send_attack.frame_delay));
 
         for (int t = 0; t < player.panel_manager.panel_list.GetUpperBound(1); t++)
         {
@@ -286,7 +286,7 @@ public class AttackSystem : MonoBehaviour
                 yield break;
 
             if (send_attack.frame_delay > 0)
-                yield return new WaitForSeconds(player.FrameToTime(send_attack.frame_delay));
+                yield return new WaitForSeconds(Player.FrameToTime(send_attack.frame_delay));
         }
     }
 

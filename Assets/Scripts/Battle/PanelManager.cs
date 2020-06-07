@@ -23,7 +23,8 @@ public class PanelManager : MonoBehaviour
     public Text right_text2;
     public Text left_text3;
     public Text right_text3;
-    public Text fps_text;
+    public Text start_text;
+    //public Text fps_text;
 
     public GameObject pause_menu;
     public GameObject end_battle_hud;
@@ -32,12 +33,19 @@ public class PanelManager : MonoBehaviour
     public float camera_offset_Y;
     public GameObject test_background;
 
+    public float time_until_countdown;
+    public float time_between_countdown;
+
     private bool game_paused;
     private bool game_finished;
+
+    private FMODUnity.StudioEventEmitter fmod_handler;
 
     // Use this for initialization
     void Start()
     {
+        fmod_handler = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
+
         panel_list = new Panel[x_size * 2, y_size];
         SetPanelGrid();
 
@@ -53,8 +61,10 @@ public class PanelManager : MonoBehaviour
 
         Camera.main.transform.position = cam_pos;
 
-        game_paused = false;
-        game_finished = false;
+        game_paused = true;
+        game_finished = true;
+
+        StartCoroutine(StartBattle());
     }
 
     // Update is called once per frame
@@ -69,7 +79,7 @@ public class PanelManager : MonoBehaviour
         right_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.RED).current_stamina.ToString();
         left_text3.text = GetPlayerInTeam(PanelTeam.BLUE).current_mana.ToString();
         right_text3.text = GetPlayerInTeam(PanelTeam.RED).current_mana.ToString();
-        fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
+        //fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
     }
 
     void LateUpdate()
@@ -344,5 +354,31 @@ public class PanelManager : MonoBehaviour
     {
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("UITest");
+    }
+
+    private IEnumerator StartBattle()
+    {
+        //var t = 0f;
+        /*
+        while (t < 1)
+        {
+            t += Time.deltaTime / Player.FrameToTime(time_until_countdown);
+            yield return null;
+        }
+        */
+        yield return new WaitForSeconds(time_until_countdown);
+        start_text.gameObject.SetActive(true);
+        for (int i = 3; i > 0; i--)
+        {
+            start_text.text = i.ToString();
+            yield return new WaitForSeconds(time_between_countdown);
+        }
+        start_text.text = "GO!";
+        game_finished = false;
+        game_paused = false;
+        yield return new WaitForSeconds(time_between_countdown);
+        start_text.gameObject.SetActive(false);
+        yield return new WaitForSeconds(3);
+        fmod_handler.SetParameter("Round 1 Voice", 0);
     }
 }

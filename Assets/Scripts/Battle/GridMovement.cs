@@ -80,7 +80,7 @@ public class GridMovement : MonoBehaviour
                 layer_changed = true;
             }
 
-            t += Time.deltaTime / player.FrameToTime(movement_frames);
+            t += Time.deltaTime / Player.FrameToTime(movement_frames);
             transform.position = Vector3.Lerp(currentPos, position, t);
             yield return null;
         }
@@ -178,7 +178,7 @@ public class GridMovement : MonoBehaviour
                 layer_changed = true;
             }
 
-            t += Time.deltaTime / player.FrameToTime(frames);
+            t += Time.deltaTime / Player.FrameToTime(frames);
             transform.position = Vector3.Lerp(currentPos, position, t);
             yield return null;
         }
