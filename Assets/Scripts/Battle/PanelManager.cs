@@ -37,12 +37,16 @@ public class PanelManager : MonoBehaviour
     public float time_until_countdown;
     public float time_between_countdown;
 
+    public float time_round2;
+    public float time_round3;
+
     private bool game_paused;
     private bool game_finished;
     private int current_round;
     public int max_rounds;
     private int red_wins;
     private int blue_wins;
+    private bool hype;
 
     private FMODUnity.StudioEventEmitter fmod_handler;
 
@@ -68,11 +72,13 @@ public class PanelManager : MonoBehaviour
 
         game_paused = true;
         game_finished = true;
-        current_round = 0;
+        current_round = 1;
         red_wins = 0;
         blue_wins = 0;
         if (max_rounds % 2 == 0)
             max_rounds++;
+
+        hype = false;
 
         StartCoroutine(StartBattle());
     }
@@ -80,17 +86,19 @@ public class PanelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (game_paused)
-            return;
-
         left_text.text = "HP: " + GetPlayerInTeam(PanelTeam.BLUE).current_hp.ToString();
         right_text.text = "HP: " + GetPlayerInTeam(PanelTeam.RED).current_hp.ToString();
         left_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.BLUE).current_stamina.ToString();
         right_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.RED).current_stamina.ToString();
         left_text3.text = GetPlayerInTeam(PanelTeam.BLUE).current_mana.ToString();
         right_text3.text = GetPlayerInTeam(PanelTeam.RED).current_mana.ToString();
+        round_text.text = "Round " + (current_round).ToString();
+
+        if (game_paused)
+            return;
+        
         fps_text.text = "FPS: " + (int)(1f / Time.deltaTime);
-        round_text.text = "Round " + (current_round + 1).ToString();
+        CheckHype();
     }
 
     void LateUpdate()
@@ -99,7 +107,7 @@ public class PanelManager : MonoBehaviour
         {
             if (player.current_hp <= 0 && !game_finished)
             {
-                EndRound();
+                StartCoroutine(EndRound());
                 break;
             }
         }
@@ -370,23 +378,26 @@ public class PanelManager : MonoBehaviour
         fmod_handler.SetParameter("Round 1 Voice", 0);
     }
 
-    private void EndRound()
+    private IEnumerator EndRound()
     {
+        game_paused = true;
+        game_finished = true;
         foreach (Player player in player_list)
         {
-            if (player.current_hp <= 0 && !game_finished)
+            if (player.current_hp <= 0)
             {
                 if (player.team == PanelTeam.BLUE)
                 {
                     red_wins++;
+                    break;
                 }
 
 
                 else if (player.team == PanelTeam.RED)
                 {
                     blue_wins++;
+                    break;
                 }
-                break;
             }
         }
         if (current_round >= max_rounds || red_wins > max_rounds / 2 || blue_wins > max_rounds / 2)
@@ -401,16 +412,35 @@ public class PanelManager : MonoBehaviour
                 player.current_mana = player.max_mana;
             }
             current_round++;
+            string fmod_round = "Round " + (current_round).ToString();
+            string fmod_round_voice = fmod_round + " Voice";
+            fmod_handler.SetParameter(fmod_round, 1);
+            fmod_handler.SetParameter(fmod_round_voice, 1);
+
+            //Provisional
+            if (current_round == 2)
+                yield return new WaitForSeconds(time_round2);
+            else if (current_round == 3)
+                yield return new WaitForSeconds(time_round3);
+
+            game_paused = false;
+            game_finished = false;
+            start_text.gameObject.SetActive(true);
+            yield return new WaitForSeconds(time_between_countdown);
+            start_text.gameObject.SetActive(false);
+            yield return new WaitForSeconds(3);
+            fmod_handler.SetParameter(fmod_round_voice, 0);
         }
             
     }
 
     private void EndGame()
     {
-        game_finished = true;
+        //game_finished = true;
 
         end_battle_hud.SetActive(true);
         Text to_set = end_battle_hud.GetComponentInChildren<Text>();
+        fmod_handler.SetParameter("Death", 1);
         if (red_wins > blue_wins)
         {
             to_set.text = "RED WINS";
@@ -427,6 +457,25 @@ public class PanelManager : MonoBehaviour
         {
             to_set.text = "DRAW";
             to_set.color = Color.black;
+        }
+    }
+
+    private void CheckHype()
+    {
+        if (hype)
+            return;
+
+        if (current_round == max_rounds)
+        {
+            foreach (Player player in player_list)
+            {
+                if (player.current_hp <= player.max_hp/2)
+                {
+                    hype = true;
+                    fmod_handler.SetParameter("HP", 0.4f);
+                    break;
+                }
+            }
         }
     }
 
