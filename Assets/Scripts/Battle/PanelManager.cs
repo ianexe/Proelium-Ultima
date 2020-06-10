@@ -263,6 +263,7 @@ public class PanelManager : MonoBehaviour
 
     void SpawnPlayers()
     {
+        /*
         int spawned_players = 0;
 
         for (int x = 0; x < x_size * 2; x++)
@@ -304,6 +305,47 @@ public class PanelManager : MonoBehaviour
                     spawned_players++;
                 }
             }
+        }
+        */
+        int spawned_players = 0;
+
+        if (spawned_players == 0)
+        {
+            GameObject to_instantiate = player_prefab;
+            Player player_instance = to_instantiate.GetComponent<Player>();
+
+            int x_spawn = x_size / 2;
+            if (x_size % 2 == 0)
+                x_spawn-=1;
+
+            player_instance.panel_manager = this;
+            player_instance.Spawn(PanelTeam.BLUE, panel_list[x_spawn, y_size/2].position_id);
+
+            GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[x_spawn, y_size/2].position_id), Quaternion.identity);
+            player_list[spawned_players] = clone.GetComponent<Player>();
+
+            if (GlobalData.Instance.blue_device != null)
+                player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.blue_device);
+
+            spawned_players++;
+        }
+
+        if (spawned_players == 1)
+        {
+            GameObject to_instantiate = player_prefab;
+            Player player_instance = to_instantiate.GetComponent<Player>();
+
+            player_instance.panel_manager = this;
+            player_instance.Spawn(PanelTeam.RED, panel_list[(x_size / 2)+x_size, y_size / 2].position_id);
+
+            GameObject clone = Instantiate(to_instantiate, PositionWithOffset(panel_list[(x_size / 2) + x_size, y_size / 2].position_id), Quaternion.identity);
+            player_list[spawned_players] = clone.GetComponent<Player>();
+            clone.GetComponent<TouchMove>().enabled = false;
+
+            if (GlobalData.Instance.red_device != null)
+                player_list[spawned_players].GetComponent<UnityEngine.InputSystem.PlayerInput>().SwitchCurrentControlScheme(GlobalData.Instance.red_device);
+
+            spawned_players++;
         }
 
     }
@@ -366,9 +408,11 @@ public class PanelManager : MonoBehaviour
         start_text.gameObject.SetActive(true);
         for (int i = 3; i > 0; i--)
         {
+            HUDManager.Test(start_text, time_between_countdown);
             start_text.text = i.ToString();
             yield return new WaitForSeconds(time_between_countdown);
         }
+        HUDManager.Test(start_text, time_between_countdown);
         start_text.text = "GO!";
         game_finished = false;
         game_paused = false;
@@ -411,6 +455,7 @@ public class PanelManager : MonoBehaviour
                 player.current_stamina = player.max_stamina;
                 player.current_mana = player.max_mana;
             }
+            GetComponent<HUDManager>().ResetHUD();
             current_round++;
             string fmod_round = "Round " + (current_round).ToString();
             string fmod_round_voice = fmod_round + " Voice";
@@ -426,6 +471,7 @@ public class PanelManager : MonoBehaviour
             game_paused = false;
             game_finished = false;
             start_text.gameObject.SetActive(true);
+            HUDManager.Test(start_text, time_between_countdown);
             yield return new WaitForSeconds(time_between_countdown);
             start_text.gameObject.SetActive(false);
             yield return new WaitForSeconds(3);

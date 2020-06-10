@@ -154,4 +154,16 @@ public class HUDManager : MonoBehaviour
     {
         return ((float)panel_manager.GetPlayerInTeam(team).current_hp / (float)panel_manager.GetPlayerInTeam(team).max_hp);
     }
+
+    public void ResetHUD()
+    {
+        left_lifebar_damage.value = 1;
+        right_lifebar_damage.value = 1;
+    }
+
+    public static void Test(Text ui_element, float time_test)
+    {
+        ui_element.CrossFadeAlpha(1, 0, false);
+        ui_element.CrossFadeAlpha(0, time_test, false);
+    }
 }
