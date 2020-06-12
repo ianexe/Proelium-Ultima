@@ -9,6 +9,7 @@ public class TeamManager : MonoBehaviour
 {
     public Image controller_image;
     public Image keyboard_image;
+    public RectTransform idle_pos;
     private Vector3 idle_position;
 
     public Text blue_ready;
@@ -62,12 +63,19 @@ public class TeamManager : MonoBehaviour
         else if (inputs_in_scene[0].currentControlScheme == "KeyBoard")
             instance = Instantiate(keyboard_image, transform);
 
+        /*
         if (idle_position == Vector3.zero)
             idle_position = instance.rectTransform.position;
         float y_value = instance.rectTransform.position.y;
         y_value -= (input_manager.playerCount-1) * image_offset;
+        */
 
-        instance.rectTransform.position = new Vector3(idle_position.x, y_value, idle_position.z);
+        //instance.rectTransform.position = new Vector3(idle_position.x, y_value, idle_position.z);
+
+        float y_value = idle_pos.position.y;
+        y_value -= (input_manager.playerCount - 1) * image_offset;
+
+        instance.rectTransform.position = new Vector3(idle_pos.position.x, y_value, idle_pos.position.z);
         active_players_ui.Add(instance);
     }
 
@@ -89,14 +97,14 @@ public class TeamManager : MonoBehaviour
                 float x_value = active_players_ui[i].rectTransform.position.x;
                 if (team == PanelTeam.BLUE && !IsPlayerInTeam(team))
                 {
-                    active_players_ui[i].rectTransform.position = new Vector3(470, 450, base_pos.z);
+                    active_players_ui[i].rectTransform.position = blue_ready.GetComponentInParent<RectTransform>().position;
                     blue_player = player;
                     ret = true;
                 }
                     
                 else if (team == PanelTeam.RED && !IsPlayerInTeam(team))
                 {
-                    active_players_ui[i].rectTransform.position = new Vector3(1470, 450, base_pos.z);
+                    active_players_ui[i].rectTransform.position = red_ready.GetComponentInParent<RectTransform>().position;
                     red_player = player;
                     ret = true;
                 }
@@ -111,10 +119,10 @@ public class TeamManager : MonoBehaviour
         {
             if (active_players[i] == player)
             {
-                float y_value = idle_position.y;
+                float y_value = idle_pos.position.y;
                 y_value -= i * image_offset;
 
-                active_players_ui[i].rectTransform.position = new Vector3(idle_position.x, y_value, 0);
+                active_players_ui[i].rectTransform.position = new Vector3(idle_pos.position.x, y_value, 0);
 
                 if (active_players[i] == blue_player)
                     blue_player = null;
