@@ -14,9 +14,10 @@ public class TeamManager : MonoBehaviour
 
     public GameObject blue_ready;
     public GameObject red_ready;
+    public GameObject press_button;
 
     private PlayerInputManager input_manager;
-    private List<UnityEngine.InputSystem.PlayerInput> active_players;
+    public List<UnityEngine.InputSystem.PlayerInput> active_players;
     private List<Image> active_players_ui;
 
     public static TeamManager Instance;
@@ -37,6 +38,9 @@ public class TeamManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (active_players.Count > 0)
+            press_button.SetActive(false);
+
         if (ArePlayersReady())
         {
             GlobalData.Instance.blue_device = blue_player.devices[0];

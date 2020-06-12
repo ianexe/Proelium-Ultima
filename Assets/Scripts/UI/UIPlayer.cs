@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,10 +9,12 @@ public class UIPlayer : MonoBehaviour
     PanelTeam team = PanelTeam.NULL;
     TeamManager team_manager;
     public bool ready = false;
+    UnityEngine.InputSystem.PlayerInput player_input;
 
     // Start is called before the first frame update
     void Start()
     {
+        player_input = GetComponent<UnityEngine.InputSystem.PlayerInput>();
         team_manager = transform.parent.GetComponent<TeamManager>();
     }
 
@@ -38,32 +41,38 @@ public class UIPlayer : MonoBehaviour
 
     private void JoinTeam(Vector2 value)
     {
+        if (player_input == null)
+            return;
+
         if (value.x <= -0.75)
         {
             Debug.Log("Join Blue");
-            if (team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.BLUE))
+            if (team_manager.JoinTeam(player_input, PanelTeam.BLUE))
                 team = PanelTeam.BLUE;
         }
 
         else if (value.x >= 0.75)
         {
             Debug.Log("Join Red");
-            if (team_manager.JoinTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>(), PanelTeam.RED))
+            if (team_manager.JoinTeam(player_input, PanelTeam.RED))
                 team = PanelTeam.RED;
         }
     }
 
     private void LeaveTeam(Vector2 value)
     {
+        if (player_input == null)
+            return;
+
         if (value.x <= -0.75 && team == PanelTeam.RED)
         {
-            team_manager.LeaveTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>());
+            team_manager.LeaveTeam(player_input);
             team = PanelTeam.NULL;
         }
 
         else if (value.x >= 0.75 && team == PanelTeam.BLUE)
         {
-            team_manager.LeaveTeam(GetComponent<UnityEngine.InputSystem.PlayerInput>());
+            team_manager.LeaveTeam(player_input);
             team = PanelTeam.NULL;
         }
     }
