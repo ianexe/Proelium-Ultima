@@ -10,12 +10,10 @@ public class TeamManager : MonoBehaviour
     public Image controller_image;
     public Image keyboard_image;
     public RectTransform idle_pos;
-    private Vector3 idle_position;
+    public RectTransform idle_pos2;
 
-    public Text blue_ready;
-    public Text red_ready;
-
-    public float image_offset;
+    public GameObject blue_ready;
+    public GameObject red_ready;
 
     private PlayerInputManager input_manager;
     private List<UnityEngine.InputSystem.PlayerInput> active_players;
@@ -34,7 +32,6 @@ public class TeamManager : MonoBehaviour
         active_players_ui = new List<Image>();
         blue_player = null;
         red_player = null;
-        idle_position = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -63,17 +60,8 @@ public class TeamManager : MonoBehaviour
         else if (inputs_in_scene[0].currentControlScheme == "KeyBoard")
             instance = Instantiate(keyboard_image, transform);
 
-        /*
-        if (idle_position == Vector3.zero)
-            idle_position = instance.rectTransform.position;
-        float y_value = instance.rectTransform.position.y;
-        y_value -= (input_manager.playerCount-1) * image_offset;
-        */
-
-        //instance.rectTransform.position = new Vector3(idle_position.x, y_value, idle_position.z);
-
         float y_value = idle_pos.position.y;
-        y_value -= (input_manager.playerCount - 1) * image_offset;
+        y_value -= (input_manager.playerCount - 1) * GetControllerOffset();
 
         instance.rectTransform.position = new Vector3(idle_pos.position.x, y_value, idle_pos.position.z);
         active_players_ui.Add(instance);
@@ -120,7 +108,7 @@ public class TeamManager : MonoBehaviour
             if (active_players[i] == player)
             {
                 float y_value = idle_pos.position.y;
-                y_value -= i * image_offset;
+                y_value -= i * GetControllerOffset();
 
                 active_players_ui[i].rectTransform.position = new Vector3(idle_pos.position.x, y_value, 0);
 
@@ -166,5 +154,10 @@ public class TeamManager : MonoBehaviour
     public UnityEngine.InputSystem.PlayerInput GetRedPlayer()
     {
         return red_player;
+    }
+
+    float GetControllerOffset()
+    {
+        return idle_pos.position.y - idle_pos2.position.y;
     }
 }
