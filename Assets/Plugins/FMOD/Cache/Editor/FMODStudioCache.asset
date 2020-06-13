@@ -250,6 +250,24 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 1
+--- !u!114 &-8018633994620058365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FunC.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Battle/FunC.bank
+  SubDir: 
+  lastModified: 637273308286503548
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7961676317934335464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +651,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &-5802090811036400606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Death
+  m_EditorClassIdentifier: 
+  Name: Death
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-5712362220893317223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +772,23 @@ MonoBehaviour:
   Max: 100
   Default: 100
   Exists: 0
+--- !u!114 &-5435381412407948536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Round 2 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 2 Voice
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &-5159754954684952259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +858,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-4530290812348200342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 2 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 2 Voice
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &-4332934289238839209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +890,23 @@ MonoBehaviour:
   Name: HP
   Min: 0
   Max: 1
+  Default: 1
+  Exists: 1
+--- !u!114 &-4285867690420144515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 3 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 3 Voice
+  Min: 0
+  Max: 2
   Default: 1
   Exists: 1
 --- !u!114 &-4204879450397728033
@@ -943,6 +1029,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-3543863905676305641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/HP
+  m_EditorClassIdentifier: 
+  Name: HP
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &-3368812352861608725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,6 +1303,23 @@ MonoBehaviour:
   - Name: 
     Value: 1180
   Exists: 1
+--- !u!114 &-2217605687216703411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Round 1 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 1 Voice
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &-2159756775785764108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,18 +1466,18 @@ MonoBehaviour:
   Path: event:/Fun C
   guid: 164403e5d62ea9449b8087151d1e3d2b
   Banks:
-  - {fileID: -1964919580944978091}
+  - {fileID: -8018633994620058365}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7476461168913315489}
-  - {fileID: 4955421522311136643}
-  - {fileID: -1971692219420347726}
-  - {fileID: 3208172879016009999}
-  - {fileID: 1363446398129345716}
-  - {fileID: 9072066089408335698}
-  - {fileID: -6184267080455286848}
+  - {fileID: 4887108105386107523}
+  - {fileID: 2401486841782231602}
+  - {fileID: 5645581300437016443}
+  - {fileID: 7238530773371638324}
+  - {fileID: -4285867690420144515}
+  - {fileID: -4530290812348200342}
+  - {fileID: -1066906090413556611}
   MinDistance: 0
   MaxDistance: 0
   Length: 259500
@@ -1442,6 +1562,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &-1066906090413556611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 3
+  m_EditorClassIdentifier: 
+  Name: Round 3
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1047142435293808344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,18 +1763,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 8621208325188811648}
-  - {fileID: -1964919580944978091}
-  - {fileID: 2796749371653279256}
-  - {fileID: 969861925972051743}
+  - {fileID: -8018633994620058365}
+  - {fileID: 3641655654521361220}
+  - {fileID: 7786579261266403442}
   EditorEvents:
   - {fileID: -1903537955110066969}
   - {fileID: 3081832153774129534}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 969861925972051743}
+  - {fileID: 7786579261266403442}
   StringsBanks:
   - {fileID: 8621208325188811648}
-  stringsBankWriteTime: 637273362105996842
+  stringsBankWriteTime: 637273308287303271
   cacheVersion: 3
 --- !u!114 &39907559700276064
 MonoBehaviour:
@@ -1997,6 +2134,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &1569475451653063067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Round 3 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 3 Voice
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &1626241427338082041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,6 +2239,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  Exists: 1
+--- !u!114 &2401486841782231602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 2
+  m_EditorClassIdentifier: 
+  Name: Round 2
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &2748189458237602915
 MonoBehaviour:
@@ -2205,18 +2376,18 @@ MonoBehaviour:
   Path: event:/Jeane
   guid: ac32e791d8805941bef04f8bf26292c4
   Banks:
-  - {fileID: 2796749371653279256}
+  - {fileID: 3641655654521361220}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3672400123417570884}
-  - {fileID: 2837147882834151414}
-  - {fileID: 1358043552623055025}
-  - {fileID: -8410593343255311293}
-  - {fileID: -3286690624241762326}
-  - {fileID: 7169906149563961114}
-  - {fileID: -4919721966698248281}
+  - {fileID: 1569475451653063067}
+  - {fileID: -2217605687216703411}
+  - {fileID: 8475894346305763261}
+  - {fileID: -5435381412407948536}
+  - {fileID: -3543863905676305641}
+  - {fileID: 7724380608031801689}
+  - {fileID: -5802090811036400606}
   MinDistance: 0
   MaxDistance: 0
   Length: 259500
@@ -2442,6 +2613,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &3641655654521361220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Jeane.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Battle/Jeane.bank
+  SubDir: 
+  lastModified: 637273308287163334
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3671101543859559701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,6 +2819,23 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 0
+--- !u!114 &4887108105386107523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Death
+  m_EditorClassIdentifier: 
+  Name: Death
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4889636974281207946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,6 +2943,23 @@ MonoBehaviour:
   Min: 1
   Max: 100
   Default: 100
+  Exists: 1
+--- !u!114 &5645581300437016443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/HP
+  m_EditorClassIdentifier: 
+  Name: HP
+  Min: 0
+  Max: 1
+  Default: 1
   Exists: 1
 --- !u!114 &5679571358976618172
 MonoBehaviour:
@@ -2930,6 +3153,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &7238530773371638324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fun C/Round 1 Voice
+  m_EditorClassIdentifier: 
+  Name: Round 1 Voice
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &7446190544424517170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,6 +3257,41 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 1
+--- !u!114 &7724380608031801689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Round 2
+  m_EditorClassIdentifier: 
+  Name: Round 2
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &7786579261266403442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Battle/Master.bank
+  SubDir: 
+  lastModified: 637273308287263283
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &7977042188941399395
 MonoBehaviour:
@@ -3113,6 +3388,23 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 1
+--- !u!114 &8475894346305763261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jeane/Round 3
+  m_EditorClassIdentifier: 
+  Name: Round 3
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8521466506138970761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,7 +3484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/Battle/Master.strings.bank
   SubDir: 
-  lastModified: 637273362105996842
+  lastModified: 637273308287303271
   LoadResult: 0
   FileSizes:
   - Name: 
