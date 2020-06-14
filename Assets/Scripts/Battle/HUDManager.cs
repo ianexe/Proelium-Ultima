@@ -15,6 +15,9 @@ public class HUDManager : MonoBehaviour
     public Slider left_stamina_bar;
     public Slider right_stamina_bar;
 
+    public Image left_mana_bar;
+    public Image right_mana_bar;
+
     Slider[] left_stamina_bars;
     Slider[] right_stamina_bars;
 
@@ -148,6 +151,9 @@ public class HUDManager : MonoBehaviour
             }
         }
 
+
+        left_mana_bar.fillAmount = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).current_mana % 1;
+        right_mana_bar.fillAmount = panel_manager.GetPlayerInTeam(PanelTeam.RED).current_mana % 1;
     }
 
     float GetNormalizedHealth(PanelTeam team)

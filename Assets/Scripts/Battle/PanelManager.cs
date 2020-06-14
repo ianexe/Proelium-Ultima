@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,8 +22,8 @@ public class PanelManager : MonoBehaviour
     public Text right_text;
     public Text left_text2;
     public Text right_text2;
-    public Text left_text3;
-    public Text right_text3;
+    public TextMeshProUGUI left_mana_text;
+    public TextMeshProUGUI right_mana_text;
     public Text start_text;
     public Text fps_text;
     public Text round_text;
@@ -90,8 +91,10 @@ public class PanelManager : MonoBehaviour
         right_text.text = "HP: " + GetPlayerInTeam(PanelTeam.RED).current_hp.ToString();
         left_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.BLUE).current_stamina.ToString();
         right_text2.text = "STA: " + GetPlayerInTeam(PanelTeam.RED).current_stamina.ToString();
-        left_text3.text = GetPlayerInTeam(PanelTeam.BLUE).current_mana.ToString();
-        right_text3.text = GetPlayerInTeam(PanelTeam.RED).current_mana.ToString();
+        int left_mana = (int)GetPlayerInTeam(PanelTeam.BLUE).current_mana;
+        left_mana_text.text = left_mana.ToString();
+        int right_mana = (int)GetPlayerInTeam(PanelTeam.RED).current_mana;
+        right_mana_text.text = right_mana.ToString();
         round_text.text = "Round " + (current_round).ToString();
 
         if (game_paused)
