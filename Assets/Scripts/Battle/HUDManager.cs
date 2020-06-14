@@ -32,6 +32,10 @@ public class HUDManager : MonoBehaviour
     public Image right_right_attack;
     public Image right_left_attack;
 
+    public Image left_round;
+    public Image right_round;
+    public Image final_round_image;
+
     public float damage_slider_speed = 0.5f;
     /*
     public Text left_text;
@@ -202,5 +206,24 @@ public class HUDManager : MonoBehaviour
     {
         ui_element.CrossFadeAlpha(1, 0, false);
         ui_element.CrossFadeAlpha(0, time_test, false);
+    }
+
+    public void SetRound(PanelTeam team, bool final_round = false)
+    {
+        if (team == PanelTeam.BLUE)
+        {
+            if (final_round)
+                final_round_image.color = Color.blue;
+            else
+                left_round.color = Color.blue;
+        }
+
+        else if (team == PanelTeam.RED)
+        {
+            if (final_round)
+                final_round_image.color = Color.red;
+            else
+                right_round.color = Color.red;
+        }
     }
 }

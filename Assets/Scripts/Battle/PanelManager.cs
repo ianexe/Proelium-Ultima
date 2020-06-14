@@ -461,6 +461,7 @@ public class PanelManager : MonoBehaviour
                 if (player.team == PanelTeam.BLUE)
                 {
                     red_wins++;
+                    GetComponent<HUDManager>().SetRound(PanelTeam.RED);
                     break;
                 }
 
@@ -468,6 +469,7 @@ public class PanelManager : MonoBehaviour
                 else if (player.team == PanelTeam.RED)
                 {
                     blue_wins++;
+                    GetComponent<HUDManager>().SetRound(PanelTeam.BLUE);
                     break;
                 }
             }
@@ -511,20 +513,21 @@ public class PanelManager : MonoBehaviour
     private void EndGame()
     {
         //game_finished = true;
-
         end_battle_hud.SetActive(true);
-        Text to_set = end_battle_hud.GetComponentInChildren<Text>();
+        TextMeshProUGUI to_set = end_battle_hud.GetComponentInChildren<TextMeshProUGUI>();
         fmod_handler.SetParameter("Death", 1);
         if (red_wins > blue_wins)
         {
             to_set.text = "RED WINS";
             to_set.color = Color.red;
+            GetComponent<HUDManager>().SetRound(PanelTeam.RED, true);
         }
 
         else if (red_wins < blue_wins)
         {
             to_set.text = "BLUE WINS";
             to_set.color = Color.blue;
+            GetComponent<HUDManager>().SetRound(PanelTeam.BLUE, true);
         }
 
         else
@@ -532,6 +535,7 @@ public class PanelManager : MonoBehaviour
             to_set.text = "DRAW";
             to_set.color = Color.black;
         }
+        StartCoroutine(ReturnToMenu());
     }
 
     private void CheckHype()
@@ -551,6 +555,12 @@ public class PanelManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private IEnumerator ReturnToMenu()
+    {
+        yield return new WaitForSeconds(5);
+        ExitGame();
     }
 
 }

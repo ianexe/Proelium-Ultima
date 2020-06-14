@@ -20,11 +20,11 @@ MonoBehaviour:
   attack_type: 1
   entity: {fileID: 7138868494354219412, guid: fb6bc12b6596a584595c2b177e118c28, type: 3}
   range_type: 0
-  frame_delay: 9
+  frame_delay: 0
   duration_frames: 11
   end_when_hit: 1
-  mana: 0
-  damage: 50
+  mana: 1
+  damage: 15
   animation: 2
   damage_animation: 1
   sfx_fail_global: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
   secondary_effects: 
-  image: {fileID: 21300000, guid: 5d6f18ad42d07a34593d342937d55d86, type: 3}
+  image: {fileID: 21300000, guid: d16f6697afd1c4848a8f25db746a1e4b, type: 3}
   move: 0
   move_teleport: 0
   frames_to_move: 0

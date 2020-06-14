@@ -23,8 +23,8 @@ MonoBehaviour:
   frame_delay: 0
   duration_frames: 30
   end_when_hit: 0
-  mana: 0
-  damage: 100
+  mana: 3
+  damage: 40
   animation: 1
   damage_animation: 1
   sfx_fail_global: 0
@@ -32,9 +32,9 @@ MonoBehaviour:
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
   secondary_effects: 
-  image: {fileID: 21300000, guid: 5d6f18ad42d07a34593d342937d55d86, type: 3}
+  image: {fileID: 21300000, guid: 615d55991dfc69c4aaa49feb55a21ddd, type: 3}
   move: 1
-  move_teleport: 1
-  frames_to_move: 5
+  move_teleport: 0
+  frames_to_move: 2
   fixed_move_time: 0
   move_type: 0
