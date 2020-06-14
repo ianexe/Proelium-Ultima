@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6c706cd76e56646bb5d038a760b4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 7956256874272648683, guid: dbbb41e4c3148084f8fee10a6a2bad2c,
+  particle: {fileID: 7956256874272648683, guid: eeffca27db4e51f46a6b3716bd45653a,
     type: 3}
   attack1: {fileID: 11400000, guid: d0c0e35cf505da34ab7bf47b260ab400, type: 2}
-  attack2: {fileID: 11400000, guid: 12fcccfa54248174bb9b6260d920728e, type: 2}
-  attack3: {fileID: 11400000, guid: b004450108c83814996a774b136a4ef8, type: 2}
-  attack4: {fileID: 11400000, guid: 3189a7003cfe20b4aa101a42beed0bad, type: 2}
+  attack2: {fileID: 11400000, guid: 98791ec0918634143935e2652114c82a, type: 2}
+  attack3: {fileID: 11400000, guid: 564d9775899d22e4e9a2593e4d13cf5d, type: 2}
+  attack4: {fileID: 11400000, guid: 69dfff8c7f1c7d44d8fdbe49c43ff9ce, type: 2}
   current_attack: {fileID: 0}
 --- !u!114 &1725302388439818649
 MonoBehaviour:

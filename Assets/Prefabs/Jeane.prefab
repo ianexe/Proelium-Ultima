@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946399642506757284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  team: 0
-  pos_id: {x: 6, y: 1}
-  real_pos_id: {x: 6, y: 1}
+  team: 1
+  pos_id: {x: 1, y: 1}
+  real_pos_id: {x: 1, y: 1}
   panel_manager: {fileID: 0}
   buffer_frames: 5
   grid_movement: {fileID: 0}

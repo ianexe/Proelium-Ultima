@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e29be080fa62c974e9528734258d38a0, type: 3}
-  m_Name: Attack3
+  m_Name: FUN-C1
   m_EditorClassIdentifier: 
   range:
     column:
-    - row: 00000001
-    - row: 00000001
-    - row: 00000001
+    - row: 0100010001
+    - row: 0000000000
+    - row: 0100010001
   attack_type: 0
   entity: {fileID: 0}
   range_type: 0
   frame_delay: 0
-  duration_frames: 60
+  duration_frames: 120
   end_when_hit: 0
-  mana: 2
-  damage: 50
-  animation: 1
+  mana: 3
+  damage: 35
+  animation: 2
   damage_animation: 1
   sfx_fail_global: 0
   sfx_hit_global: 0
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
-  secondary_effects: 01000000
-  image: {fileID: 21300000, guid: 2b4ef2179899f394ab4c754efcb35d17, type: 3}
-  move: 0
-  move_teleport: 0
+  secondary_effects: 
+  image: {fileID: 21300000, guid: b3f370876abf94d48894645346fb4eb1, type: 3}
+  move: 1
+  move_teleport: 1
   frames_to_move: 0
   fixed_move_time: 0
   move_type: 0

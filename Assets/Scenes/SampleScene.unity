@@ -4554,7 +4554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blue_character: 0
-  red_character: 0
+  red_character: 1
 --- !u!4 &1348214705
 Transform:
   m_ObjectHideFlags: 0
@@ -5082,7 +5082,7 @@ MonoBehaviour:
   resume_button: {fileID: 1421279674}
   camera_offset_Y: 0.35
   test_background: {fileID: 992092209}
-  time_until_countdown: 9
+  time_until_countdown: 0
   time_between_countdown: 0.75
   time_round2: 6
   time_round3: 6.5
