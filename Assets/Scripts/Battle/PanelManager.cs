@@ -175,6 +175,10 @@ public class PanelManager : MonoBehaviour
     {
         bool ret = false;
 
+        Vector2 panel_pos = new Vector2(x, y);
+        if (IsEnemyInPanel(panel_pos, team))
+            return false;
+
         if (!PanelExists(x, y))
             return false;
 
