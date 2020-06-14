@@ -112,7 +112,7 @@ public class UIPlayer : MonoBehaviour
         if (context.phase != InputActionPhase.Performed)
             return;
 
-        if (!selected)
+        if (team != PanelTeam.NULL && !selected)
         {
             selected = true;
             team_manager.SwitchCharacterSelect(team);

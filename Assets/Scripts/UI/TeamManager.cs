@@ -21,6 +21,8 @@ public class TeamManager : MonoBehaviour
 
     public GameObject blue_ready;
     public GameObject red_ready;
+    public GameObject blue_arrows;
+    public GameObject red_arrows;
 
     public GameObject blue_character_ui;
     public GameObject red_character_ui;
@@ -202,10 +204,12 @@ public class TeamManager : MonoBehaviour
         if (team == PanelTeam.BLUE)
         {
             blue_ready.SetActive(!blue_ready.activeInHierarchy);
+            blue_arrows.SetActive(!blue_arrows.activeInHierarchy);
         }
         else if (team == PanelTeam.RED)
         {
             red_ready.SetActive(!red_ready.activeInHierarchy);
+            red_arrows.SetActive(!red_arrows.activeInHierarchy);
         }
 
         if (ready)
