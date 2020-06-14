@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class PanelManager : MonoBehaviour
 {
     public GameObject panel_prefab;
-    public GameObject player_prefab;
+    public GameObject jeane_prefab;
+    public GameObject func_prefab;
 
     public int x_size;
     public int y_size;
@@ -314,7 +315,9 @@ public class PanelManager : MonoBehaviour
 
         if (spawned_players == 0)
         {
-            GameObject to_instantiate = player_prefab;
+            GameObject to_instantiate = jeane_prefab;
+            if (GlobalData.Instance.blue_character == Character.FUNC)
+                to_instantiate = func_prefab;
             Player player_instance = to_instantiate.GetComponent<Player>();
 
             int x_spawn = x_size / 2;
@@ -335,7 +338,9 @@ public class PanelManager : MonoBehaviour
 
         if (spawned_players == 1)
         {
-            GameObject to_instantiate = player_prefab;
+            GameObject to_instantiate = jeane_prefab;
+            if (GlobalData.Instance.red_character == Character.FUNC)
+                to_instantiate = func_prefab;
             Player player_instance = to_instantiate.GetComponent<Player>();
 
             player_instance.panel_manager = this;

@@ -32,6 +32,7 @@ MonoBehaviour:
   sfx_fail_jeane: -1
   sfx_hit_jeane: -1
   secondary_effects: 
+  image: {fileID: 21300000, guid: 5d6f18ad42d07a34593d342937d55d86, type: 3}
   move: 1
   move_teleport: 1
   frames_to_move: 5

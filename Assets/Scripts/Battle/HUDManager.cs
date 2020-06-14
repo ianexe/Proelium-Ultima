@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,16 @@ public class HUDManager : MonoBehaviour
 
     Slider[] left_stamina_bars;
     Slider[] right_stamina_bars;
+
+    public Image left_up_attack;
+    public Image left_down_attack;
+    public Image left_right_attack;
+    public Image left_left_attack;
+
+    public Image right_up_attack;
+    public Image right_down_attack;
+    public Image right_right_attack;
+    public Image right_left_attack;
 
     public float damage_slider_speed = 0.5f;
     /*
@@ -154,6 +165,26 @@ public class HUDManager : MonoBehaviour
 
         left_mana_bar.fillAmount = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).current_mana % 1;
         right_mana_bar.fillAmount = panel_manager.GetPlayerInTeam(PanelTeam.RED).current_mana % 1;
+
+        left_down_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack1.image;
+        left_left_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack2.image;
+        left_right_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack3.image;
+        left_up_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack4.image;
+
+        left_down_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack1.mana.ToString();
+        left_left_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack2.mana.ToString();
+        left_right_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack3.mana.ToString();
+        left_up_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.BLUE).attack_system.attack4.mana.ToString();
+
+        right_down_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack1.image;
+        right_left_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack2.image;
+        right_right_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack3.image;
+        right_up_attack.sprite = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack4.image;
+
+        right_down_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack1.mana.ToString();
+        right_left_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack2.mana.ToString();
+        right_right_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack3.mana.ToString();
+        right_up_attack.transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = panel_manager.GetPlayerInTeam(PanelTeam.RED).attack_system.attack4.mana.ToString();
     }
 
     float GetNormalizedHealth(PanelTeam team)

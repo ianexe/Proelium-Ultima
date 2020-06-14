@@ -63,7 +63,7 @@ public class Attack : ScriptableObject
 
 
     public List<SecondaryEffect> secondary_effects;
-    //public Sprite image;
+    public Sprite image;
 
     public bool move;
     public bool move_teleport;

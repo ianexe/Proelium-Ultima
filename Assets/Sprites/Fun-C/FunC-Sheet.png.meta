@@ -1,0 +1,691 @@
+fileFormatVersion: 2
+guid: 34248715355a38b408ae284c2aae9770
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3113771772698870492
+    second: FunC-Sheet_0
+  - first:
+      213: 3497278122224328549
+    second: FunC-Sheet_1
+  - first:
+      213: -6523498929492074045
+    second: FunC-Sheet_2
+  - first:
+      213: 7194671304770233339
+    second: FunC-Sheet_3
+  - first:
+      213: 7284313511958362593
+    second: FunC-Sheet_4
+  - first:
+      213: 6864538270105363615
+    second: FunC-Sheet_5
+  - first:
+      213: -5030883199976083257
+    second: FunC-Sheet_6
+  - first:
+      213: 697493117671136501
+    second: FunC-Sheet_7
+  - first:
+      213: 5287028994790207356
+    second: FunC-Sheet_8
+  - first:
+      213: 1920208221066016636
+    second: FunC-Sheet_9
+  - first:
+      213: -8087103881360020789
+    second: FunC-Sheet_10
+  - first:
+      213: 8132846013164768161
+    second: FunC-Sheet_11
+  - first:
+      213: -7160172006770724484
+    second: FunC-Sheet_12
+  - first:
+      213: 7769744637323284838
+    second: FunC-Sheet_13
+  - first:
+      213: 4368641945600617880
+    second: FunC-Sheet_14
+  - first:
+      213: -162521684063452930
+    second: FunC-Sheet_15
+  - first:
+      213: -3010384381571442517
+    second: FunC-Sheet_16
+  - first:
+      213: 5150094151071251067
+    second: FunC-Sheet_17
+  - first:
+      213: 4761921961706639545
+    second: FunC-Sheet_18
+  - first:
+      213: 2395151192365485606
+    second: FunC-Sheet_19
+  - first:
+      213: -3105949829263743444
+    second: FunC-Sheet_20
+  - first:
+      213: -4225106115306253680
+    second: FunC-Sheet_21
+  - first:
+      213: 2037699685195394142
+    second: FunC-Sheet_22
+  - first:
+      213: 7255132913900729279
+    second: FunC-Sheet_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FunC-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5f6c68895ed7043aef1be12730de63
+      internalID: -3113771772698870492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 580
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f78309f0d6f7ed408c31d6c5e5427e7
+      internalID: 3497278122224328549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 580
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c245fd163fe59b498414473da74c7c7
+      internalID: -6523498929492074045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 580
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6f92d50811bee47b555ccabe687ca5
+      internalID: 7194671304770233339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 580
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfe5801bd346a242976bd2c26e06eab
+      internalID: 7284313511958362593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 435
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadc5264053f09349a7e6cfe76022ff5
+      internalID: 6864538270105363615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 435
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e319f5f7e65c19f4c9ad3753638c4c84
+      internalID: -5030883199976083257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 435
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bde8ffcb2089c4388ef79de4a1a5ed
+      internalID: 697493117671136501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 435
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf4e572429f11f4396ed51c0f2ddf9e
+      internalID: 5287028994790207356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 435
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27394e0bd43b4464f87e14463fd314a2
+      internalID: 1920208221066016636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b1d1889d592bc448ba33725f6d7d3b
+      internalID: -8087103881360020789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 290
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcc6092aa319364aa909dba363ac909
+      internalID: 8132846013164768161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 290
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c145b8eb0a1f30048a2b1c83d90beb33
+      internalID: -7160172006770724484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 290
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee90cecb9ea3e2a4095b048f2bd88c26
+      internalID: 7769744637323284838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 290
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89668ede2ff8eb4488bfce0c6b07d5b2
+      internalID: 4368641945600617880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 145
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be1ea97d59d15d4d9e1ff8e63914a20
+      internalID: -162521684063452930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 145
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6e50a689056cf41aa96280718749e7
+      internalID: -3010384381571442517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 145
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9486160334667484693f0e1cdb0585ca
+      internalID: 5150094151071251067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 145
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9e2d1f2f826eb45aea3464e7248500
+      internalID: 4761921961706639545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 145
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437c112255863184294f67dc4f609ebf
+      internalID: 2395151192365485606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6681ba735c071c4183ac4f2b9d410aa
+      internalID: -3105949829263743444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b7077c7dd9ad348a8b0ba394dd37bc
+      internalID: -4225106115306253680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85727a01b069f9843b69d1ce014947c0
+      internalID: 2037699685195394142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FunC-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 145
+      alignment: 9
+      pivot: {x: 0.52, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbdfeb5d1970da479eefe7ffebc67ec
+      internalID: 7255132913900729279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
