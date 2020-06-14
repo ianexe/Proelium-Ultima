@@ -57,6 +57,26 @@ public class PanelManager : MonoBehaviour
     {
         fmod_handler = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
 
+        //Music Sorter PROVISIONAL
+        //------------------------------------------------------
+        if (GlobalData.Instance.red_character != GlobalData.Instance.blue_character)
+        {
+            int random_music = Random.Range((int)0, (int)1);
+            if (random_music == 0)
+                fmod_handler.Event = "event:/Jeane";
+            else
+                fmod_handler.Event = "event:/Fun C";
+        }
+
+        else if (GlobalData.Instance.red_character == Character.JEANE)
+            fmod_handler.Event = "event:/Jeane";
+
+        else if(GlobalData.Instance.red_character == Character.FUNC)
+            fmod_handler.Event = "event:/Fun C";
+
+        fmod_handler.enabled = true;
+        //------------------------------------------------------
+
         panel_list = new Panel[x_size * 2, y_size];
         SetPanelGrid();
 
