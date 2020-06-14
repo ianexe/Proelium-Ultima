@@ -12,9 +12,20 @@ public class TeamManager : MonoBehaviour
     public RectTransform idle_pos;
     public RectTransform idle_pos2;
 
+    public AudioSource player_enter_sfx;
+    public AudioSource player_move_sfx;
+    public AudioSource team_enter_sfx;
+    public AudioSource champ_move_sfx;
+    public AudioSource ready_sfx;
+    public AudioSource cancel_sfx;
+
     public GameObject blue_ready;
     public GameObject red_ready;
-    public GameObject press_button;
+
+    public GameObject blue_character_ui;
+    public GameObject red_character_ui;
+
+    public RectTransform press_button;
 
     private PlayerInputManager input_manager;
     public List<UnityEngine.InputSystem.PlayerInput> active_players;
@@ -24,6 +35,11 @@ public class TeamManager : MonoBehaviour
 
     public UnityEngine.InputSystem.PlayerInput blue_player;
     public UnityEngine.InputSystem.PlayerInput red_player;
+
+    private Character blue_character = Character.NULL;
+    private Character red_character = Character.NULL;
+
+    public List<Image> char_sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +55,16 @@ public class TeamManager : MonoBehaviour
     void Update()
     {
         if (active_players.Count > 0)
-            press_button.SetActive(false);
+        {
+            //press_button.gameObject.SetActive(false);
+        }
 
         if (ArePlayersReady())
         {
             GlobalData.Instance.blue_device = blue_player.devices[0];
             GlobalData.Instance.red_device = red_player.devices[0];
+            GlobalData.Instance.blue_character = blue_character;
+            GlobalData.Instance.red_character = red_character;
             SceneManager.LoadScene("SampleScene");
         }
     }
@@ -69,6 +89,12 @@ public class TeamManager : MonoBehaviour
 
         instance.rectTransform.position = new Vector3(idle_pos.position.x, y_value, idle_pos.position.z);
         active_players_ui.Add(instance);
+
+        Vector3 press_position = press_button.position;
+        press_position.y -= GetControllerOffset();
+        press_button.position = press_position;
+
+        player_enter_sfx.Play();
     }
 
     public void OnPlayerLeft()
@@ -92,6 +118,8 @@ public class TeamManager : MonoBehaviour
                     active_players_ui[i].rectTransform.position = blue_ready.GetComponentInParent<RectTransform>().position;
                     blue_player = player;
                     ret = true;
+
+                    player_move_sfx.Play();
                 }
                     
                 else if (team == PanelTeam.RED && !IsPlayerInTeam(team))
@@ -99,6 +127,8 @@ public class TeamManager : MonoBehaviour
                     active_players_ui[i].rectTransform.position = red_ready.GetComponentInParent<RectTransform>().position;
                     red_player = player;
                     ret = true;
+
+                    player_move_sfx.Play();
                 }
             }
         }
@@ -121,6 +151,8 @@ public class TeamManager : MonoBehaviour
 
                 else if (active_players[i] == red_player)
                     red_player = null;
+
+                player_move_sfx.Play();
             }
         }
     }
@@ -163,5 +195,60 @@ public class TeamManager : MonoBehaviour
     float GetControllerOffset()
     {
         return idle_pos.position.y - idle_pos2.position.y;
+    }
+
+    public void SwitchReadyText(PanelTeam team, bool ready=true)
+    {
+        if (team == PanelTeam.BLUE)
+        {
+            blue_ready.SetActive(!blue_ready.activeInHierarchy);
+        }
+        else if (team == PanelTeam.RED)
+        {
+            red_ready.SetActive(!red_ready.activeInHierarchy);
+        }
+
+        if (ready)
+            ready_sfx.Play();
+        else
+            cancel_sfx.Play();
+    }
+
+    public void SwitchCharacterSelect(PanelTeam team, bool cancel = false)
+    {
+        for (int i = 0; i < active_players.Count; i++)
+        {
+            if (active_players[i].GetComponent<UIPlayer>().team == team)
+                active_players_ui[i].gameObject.SetActive(!active_players_ui[i].gameObject.activeInHierarchy);
+        }
+
+        if (team == PanelTeam.BLUE)
+            blue_character_ui.SetActive(!blue_character_ui.activeInHierarchy);
+
+        else if (team == PanelTeam.RED)
+            red_character_ui.SetActive(!red_character_ui.activeInHierarchy);
+
+        if (cancel)
+            cancel_sfx.Play();
+    }
+
+    public void ChooseCharacter(PanelTeam team, Character character, bool first_select = false)
+    {
+        if (team == PanelTeam.BLUE)
+        {
+            blue_character = character;
+            blue_character_ui.GetComponentInChildren<Image>().sprite = char_sprites[(int)character].sprite;
+        }
+            
+        else if (team == PanelTeam.RED)
+        {
+            red_character = character;
+            red_character_ui.GetComponentInChildren<Image>().sprite = char_sprites[(int)character].sprite;
+        }
+
+        if (first_select)
+            team_enter_sfx.Play();
+        else
+            champ_move_sfx.Play();
     }
 }

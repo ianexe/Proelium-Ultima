@@ -9,6 +9,13 @@ public enum PanelTeam
     NULL
 }
 
+public enum Character
+{
+    JEANE,
+    FUNC,
+    NULL
+}
+
 public enum PanelState
 {
     NORMAL,

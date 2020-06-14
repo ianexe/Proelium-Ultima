@@ -8,7 +8,10 @@ public class GlobalData : MonoBehaviour
     public static GlobalData Instance;
 
     public InputDevice blue_device;
+    public Character blue_character;
+
     public InputDevice red_device;
+    public Character red_character;
 
     void Awake()
     {

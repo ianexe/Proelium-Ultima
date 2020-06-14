@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 
 public class UIPlayer : MonoBehaviour
 {
-    PanelTeam team = PanelTeam.NULL;
+    public PanelTeam team = PanelTeam.NULL;
+    public Character character = Character.JEANE;
     TeamManager team_manager;
+    public bool selected = false;
     public bool ready = false;
     UnityEngine.InputSystem.PlayerInput player_input;
 
     // Start is called before the first frame update
     void Start()
     {
+        character = Character.JEANE;
         player_input = GetComponent<UnityEngine.InputSystem.PlayerInput>();
         team_manager = transform.parent.GetComponent<TeamManager>();
     }
@@ -34,8 +37,12 @@ public class UIPlayer : MonoBehaviour
         if (team == PanelTeam.NULL)
             JoinTeam(value);
 
-        else if (team != PanelTeam.NULL && !ready)
+        else if (team != PanelTeam.NULL && !selected)
             LeaveTeam(value);
+
+        else if (team != PanelTeam.NULL && selected && !ready)
+            ChooseCharacter(value);
+            
 
     }
 
@@ -77,19 +84,46 @@ public class UIPlayer : MonoBehaviour
         }
     }
 
+    private void ChooseCharacter(Vector2 value)
+    {
+        if (value.x <= -0.75)
+        {
+            Debug.Log("Previous Character");
+            character -= 1;
+            if ((int)character == -1)
+                character = Character.NULL - 1;
+
+            team_manager.ChooseCharacter(team, character);
+        }
+
+        else if (value.x >= 0.75)
+        {
+            Debug.Log("Next Character");
+            character += 1;
+            if (character == Character.NULL)
+                character = 0;
+
+            team_manager.ChooseCharacter(team, character);
+        }
+    }
+
     public void SetReady(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
             return;
 
-        if (team != PanelTeam.NULL)
+        if (!selected)
+        {
+            selected = true;
+            team_manager.SwitchCharacterSelect(team);
+            team_manager.ChooseCharacter(team, character, true);
+        }
+
+        else if (team != PanelTeam.NULL && character != Character.NULL && !ready)
         {
             ready = true;
-            if (team == PanelTeam.BLUE)
-                team_manager.blue_ready.gameObject.SetActive(true);
-
-            else if (team == PanelTeam.RED)
-                team_manager.red_ready.gameObject.SetActive(true);
+            team_manager.SwitchReadyText(team);
+            team_manager.ChooseCharacter(team, character, true);
         }
     }
 
@@ -98,14 +132,16 @@ public class UIPlayer : MonoBehaviour
         if (context.phase != InputActionPhase.Performed)
             return;
 
-        if (ready)
+        if (selected && !ready)
+        {
+            selected = false;
+            team_manager.SwitchCharacterSelect(team, true);
+        }
+
+        else if (ready)
         {
             ready = false;
-            if (team == PanelTeam.BLUE)
-                team_manager.blue_ready.gameObject.SetActive(false);
-
-            else if (team == PanelTeam.RED)
-                team_manager.red_ready.gameObject.SetActive(false);
+            team_manager.SwitchReadyText(team, false);
         }
     }
 }
